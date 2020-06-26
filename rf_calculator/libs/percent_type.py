@@ -1,12 +1,12 @@
 import logging
 import re
 
-from rf_calculator.libs._special_type_abs import _SpecialType
+from rf_calculator.abstracts import TypeAbstract
 
 _REGEX = re.compile(r'^([\-+])?([\d.]+)(%)?$')
 
 
-class Percent (_SpecialType):
+class Percent (TypeAbstract):
     __doc__ = """Percent class allow define percentage comparing of numbers
        Allowed define as:
         - percentage string (5%, 5.5%, +5%, -5%, 0.3%)
@@ -20,7 +20,7 @@ class Percent (_SpecialType):
 
     def __init__(cls, value, format_round=2):
         _float_units, cls._direction = cls._parse(value)
-        super(Percent , cls).__init__(_float_units)
+        super(Percent, cls).__init__(_float_units)
 
     @staticmethod
     def _parse(value):
@@ -34,26 +34,27 @@ class Percent (_SpecialType):
             assert 0 <= _float <= 100, f"Percent must de decimal number in range between 0-100 only ({_float})"
             return _float, _direction
         except AssertionError:
-            raise TypeError(f"Percent must de decimal number in range between 0-100 only")
+            raise ValueError(f"Percent must de decimal number in range between 0-100 only")
         except (ValueError, TypeError):
-            raise TypeError(f"Percentage given to define in format [-/+]<float>[%] only ({value})")
+            raise ValueError(f"Percentage given to define in format [-/+]<float>[%] only ({value})")
 
     def in_range(self, reference, other_number):
         return self - reference <= other_number <= self + reference
 
     def __str__(self):
-        return "{}{}%".format(
+        return "{}{0:.0f}".format(
             self._direction if self._direction is not None else r'+/-',
             self.units)
 
     def __format__(self, format_spec):
-        return '{{}}{{}}%'.format(format_spec).format(
+        format_expression = f'{{}}{{:{format_spec}}}'
+        return format_expression.format(
             self._direction if self._direction is not None else r'+/-',
-            float(self))
+            float(self) / 100 if format_spec.endswith('%') else float(self))
 
     @staticmethod
     def from_units(value):
-        return Percent (value)
+        return Percent(value)
 
     def __add__(self, other):
         if self._direction is None or self._direction == '+':
@@ -71,35 +72,3 @@ class Percent (_SpecialType):
         logging.debug(f"Number {other} sub ({self}) = {result}")
         return result
 
-    # Operator support
-    @staticmethod
-    def eq(reference_num, other_num, percent):
-        return Percent (percent).in_range(reference_num, other_num)
-
-    @staticmethod
-    def ne(reference_num, other_num, percent):
-        return not Percent .eq(reference_num, other_num, percent)
-
-    @staticmethod
-    def gt(reference_num, other_num, percent):
-        return reference_num > Percent .add(other_num, percent)
-
-    @staticmethod
-    def ge(reference_num, other_num, percent):
-        return reference_num >= Percent .add(other_num, percent)
-
-    @staticmethod
-    def lt(reference_num, other_num, percent):
-        return reference_num < Percent .sub(other_num, percent)
-
-    @staticmethod
-    def le(reference_num, other_num, percent):
-        return reference_num <= Percent .sub(other_num, percent)
-
-    @staticmethod
-    def add(number, percent):
-        return Percent (percent) + number
-
-    @staticmethod
-    def sub(number, percent):
-        return Percent (percent) - number

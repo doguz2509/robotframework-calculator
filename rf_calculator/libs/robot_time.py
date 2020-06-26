@@ -1,7 +1,7 @@
 from enum import IntEnum
 from robot.utils import timestr_to_secs
 
-__doc__ = """RobotTime are extension for RF robot.utils.timestr_to_secs method
+__doc__ = """RobotTime are extension for RF robot.operators.timestr_to_secs method
 Allow math manipulation with time strings in compatible for RF formats
 
 Examples:
@@ -11,7 +11,7 @@ Examples:
 
 """
 
-from rf_calculator.libs._special_type_abs import _SpecialType
+from rf_calculator.abstracts import TypeAbstract
 from rf_calculator.libs.percent_type import Percent
 
 
@@ -22,7 +22,7 @@ class RobotTimeUnits(IntEnum):
     d = 24 * 60 * 60
 
 
-class RobotTime(_SpecialType):
+class RobotTime(TypeAbstract):
 
     def __init__(cls, value_str):
         super().__init__(timestr_to_secs(value_str))
