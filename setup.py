@@ -6,6 +6,9 @@ setup(
     name='robotframework-calculator',
     version=version,
     packages=['rf_calculator', 'rf_calculator.libs'],
+    install_requires=[
+        'robotframework>3.1'
+    ],
     url='https://github.com/doguz2509/robotframework-calculator',
     license='MIT',
     author='Dmitry Oguz',

@@ -11,6 +11,9 @@ Examples:
 
 """
 
+from rf_calculator.libs._special_type_abs import _SpecialType
+from rf_calculator.libs.percent_type import Percent
+
 
 class RobotTimeUnits(IntEnum):
     s = 1
@@ -19,22 +22,21 @@ class RobotTimeUnits(IntEnum):
     d = 24 * 60 * 60
 
 
-class RobotTime(type):
-    def __new__(mcs, time_interval_str: str = None, **kwargs):
-        return super().__new__(mcs, 'RobotTimeInterval', (object,), kwargs)
+class RobotTime(_SpecialType):
 
-    def __init__(cls, time_interval):
-        super().__init__('RobotTimeInterval')
-        cls._seconds = timestr_to_secs(time_interval)
+    def __init__(cls, value_str):
+        super().__init__(timestr_to_secs(value_str))
 
     @staticmethod
-    def from_seconds(absolute_seconds):
-        return RobotTime(absolute_seconds)
+    def from_units(value_str):
+        if type(value_str) == RobotTime:
+            return value_str
+        return RobotTime(value_str)
 
     @staticmethod
-    def _seconds_to_timestr(seconds):
+    def _seconds_to_timestr(seconds, leading_unit=RobotTimeUnits.d):
         _res_str = ''
-        for index, unit in enumerate(reversed(list(RobotTimeUnits))):
+        for index, unit in enumerate([_u for _u in reversed(list(RobotTimeUnits)) if _u <= leading_unit]):
             _mod = int(seconds // unit)
             seconds -= _mod * unit
             if _mod > 0:
@@ -42,46 +44,27 @@ class RobotTime(type):
         return _res_str.strip() if len(_res_str) > 0 else '0'
 
     def __str__(self):
-        return self._seconds_to_timestr(self.seconds)
+        return self._seconds_to_timestr(int(self))
 
-    @property
-    def seconds(cls):
-        return cls._seconds
-
-    @staticmethod
-    def _normalise(item, accept_number=True):
-        if isinstance(item, RobotTime):
-            return item.seconds
+    def __format__(self, format_spec):
+        if format_spec != '':
+            return self._seconds_to_timestr(int(self), RobotTimeUnits[format_spec])
         else:
-            return RobotTime(item).seconds
-
-    def __eq__(self, other):
-        return self.seconds == self._normalise(other)
-
-    def __ne__(self, other):
-        return not RobotTime.__eq__(self, other)
+            return str(self)
 
     def __add__(self, other):
-        return self.from_seconds(self.seconds + self._normalise(other))
+        if type(other) == Percent:
+            return self.from_units(other + self)
+        return super(RobotTime, self).__add__(other)
+
+    def __iadd__(self, other):
+        if type(other) == Percent:
+            _temp = self.from_units(other + self)
+            self._units = _temp.units
+            return self
+        return super(RobotTime, self).__iadd__(other)
 
     def __sub__(self, other):
-        return self.from_seconds(self.seconds - self._normalise(other))
-
-    def __idiv__(self, other):
-        if not isinstance(other, (int, float)):
-            raise TypeError("Dividing allowed to numbers only")
-        return self.from_seconds(self.seconds / other)
-
-    def __mul__(self, other):
-        if not isinstance(other, (int, float)):
-            raise TypeError("Multiplexing allowed to numbers only")
-        return self.from_seconds(self.seconds * other)
-
-    def __truediv__(self, other):
-        if not isinstance(other, (int, float)):
-            raise TypeError("Dividing allowed to numbers only")
-        return self.from_seconds(self.seconds / other)
-
-    def __floordiv__(self, other):
-        return RobotTime.__truediv__(self, other)
-
+        if type(other) == Percent:
+            return self.from_units(other - self)
+        return super(RobotTime, self).__sub__(other)
