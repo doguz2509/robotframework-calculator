@@ -6,15 +6,16 @@ class _SpecialType(ABC, type):
     def __new__(mcs, *args, **kwargs):
         return super().__new__(mcs, mcs.__name__, (object,), kwargs)
 
-    def __init__(cls, units):
+    def __init__(cls, units, _type=float):
         super().__init__(cls.__name__)
         try:
-            cls._units: float = float(units)
+            assert isinstance(units, (int, float))
+            cls._units: _type = _type(units)
         except Exception:
             raise ValueError(f"Value must be numeric only vs. {units} - ({type(units).__name__})")
 
     def __float__(self):
-        return self._units
+        return float(self._units)
 
     def __int__(self):
         return int(self._units)
@@ -36,7 +37,7 @@ class _SpecialType(ABC, type):
 
     @staticmethod
     @abstractmethod
-    def from_units(value):
+    def from_units(value, **kwargs):
         raise NotImplementedError()
 
     def __eq__(self, other):
