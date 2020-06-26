@@ -19,7 +19,7 @@ class TestPercent(TestCase):
 
     def test_01(self):
         p1 = Percent('10%', 4)
-        print("{:.1f}".format(p1))
+        print("{:.2%}".format(p1))
         n1 = 10006
         print(f"{n1:02d}")
         print(f"{p1 + n1}")
