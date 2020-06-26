@@ -3,6 +3,9 @@ import enum
 import operator
 import re
 
+from rf_calculator.abstracts import TypeAbstract
+from rf_calculator.libs import Percent
+
 
 class BitrateFormat(enum.IntEnum):
     b = 1
@@ -18,119 +21,84 @@ class BitrateFormat(enum.IntEnum):
 BITRATE_REGEX = re.compile(r'([\d.]+)(.*)')
 
 
-class PacketSize(type):
+class PacketSize(TypeAbstract):
+    def __init__(cls, value_str=None, **kwargs):
+        value_str = '0' if value_str == 0 else value_str
+        rate = kwargs.get('rate', '')
+        parsing_value = value_str or f"{kwargs.get('number', '')}{rate}"
+        if parsing_value == '':
+            raise ValueError(f"Packet size not provided: neither in '{value_str}' or '{kwargs}")
+        number, rate_name = cls.parse(parsing_value)
+        cls._rate = BitrateFormat[rate_name if rate == '' else rate]
+        super().__init__(number * cls._rate)
 
-    def __new__(mcs, bitrate_input: str = None, **kwargs):
-        return super().__new__(mcs, 'PacketSize', (object,), kwargs)
+    @property
+    def rate(cls):
+        return cls._rate
 
-    def __init__(cls, bitrate_input: str = None, **kwargs):
-        super().__init__('PacketSize')
-        cls.__after_coma: int
-        cls.__str_format: str
-
-        if bitrate_input is None:
-            cls.__number: float = float(kwargs.get('number', -1))
-            cls.__format_number()
-            cls.format = kwargs.get('format', BitrateFormat.b.name)
-        else:
-            cls.__parse(bitrate_input)
-
-        if cls.__number == -1:
-            raise ValueError("Cannot create PacketSize instance")
-
-        cls.__bit_value = cls.__number * cls.__format.value
+    def _to_string(cls, format_spec, rate=None):
+        rate = BitrateFormat[rate] if rate else cls._rate
+        return f"{cls.units / rate:{format_spec}}{rate.name}"
 
     def __format__(self, format_spec):
-        old_format = self.__str_format
-        try:
-            if format_spec != '':
-                self.__str_format = "{{:{new_format}}}{{}}".format(new_format=format_spec)
-            return str(self)
-        finally:
-            self.__str_format = old_format
+        rates = [r for r in list(BitrateFormat) if format_spec.endswith(r.name)]
+        if len(rates) == 1:
+            rate = rates[0].name
+            format_spec = format_spec.replace(rate, 'f')
+            return self._to_string(format_spec, rate=rate)
+        elif len(rates) == 0:
+            return self._to_string(format_spec)
+        else:
+            raise IndexError()
 
     def __str__(self):
-        return self.__str_format.format(self.number, self.format)
+        return self._to_string('')
 
-    __repr__ = __str__
-
-    def __format_number(self):
-        self.__after_coma = 0 if round(self.__number) == self.__number else 2
-        self.__str_format = "{{:.{dig}f}}{{}}".format(dig=self.__after_coma)
-
-    def __parse(self, bitrate_str: str):
+    @staticmethod
+    def parse(bitrate_str: str):
         try:
             m = BITRATE_REGEX.match(str(bitrate_str))
             if m is None:
                 raise AttributeError("Wrong bitrate format ({})".format(bitrate_str))
-            self.__number = float(m.groups()[0])
-            self.__format_number()
-            self.format = m.groups()[1]
+            number = float(m.groups()[0])
+            rate = m.groups()[1] or BitrateFormat.b.name
+            return number, rate
         except Exception as e:
             raise type(e)("Cannot parse PacketSize value string '{}' with error: {}".format(bitrate_str, e))
 
-    @property
-    def bit_value(self):
-        return self.__bit_value
-
-    @property
-    def number(self):
-        return self.__bit_value / self.__format.value
-
-    def print(self, f=None):
-        pattern = re.compile(r'(\d+)(.(\d+))?')
-        if f is not None:
-            _format = BitrateFormat[f]
-        else:
-            _format = self._get_optimal_format()
-
-        return "{}{}".format(self.__bit_value / _format.value, _format.name)
-
-    def _get_optimal_format(self):
-        pattern = re.compile(r'(\d+)(.([\de\-g]+))?')
-        for _f in BitrateFormat:
-            example = self.print(_f.name)
-            try:
-                _, bc, _, ac, b = pattern.split(example)
-                ac_int = int(str(ac))
-                bc_len = len(str(bc))
-                ac_len = len(str(ac_int))
-                if b == b.upper() and bc_len > ac_len:
-                    return BitrateFormat[b]
-            except Exception as e:
-                print(e)
-
-        return BitrateFormat.K
-
-    @property
-    def format(self):
-        return self.__format.name
-
-    @format.setter
-    def format(self, value):
-        self.__format = BitrateFormat[value] if value != '' else BitrateFormat.b
+    @staticmethod
+    def from_units(value, rate=BitrateFormat.k):
+        if isinstance(value, str):
+            return PacketSize(value, rate=rate)
+        return PacketSize(number=value, rate=rate)
 
     def _compare_operation(self, other, operation: operator):
-        if isinstance(other, PacketSize):
-            return operation(self.bit_value, other.bit_value)
-        elif isinstance(other, (int, float)):
-            return operation(self.number, other)
+        if isinstance(other, str):
+            other = PacketSize(other)
 
+        if type(other) == PacketSize:
+            return operation(self.units, other.units)
+        elif isinstance(other, (int, float)):
+            return operation(self.units, other)
         raise ValueError("Argument '{}' not match operation {}".format(other, operation))
 
     def _execute_operation(self, other, operation: operator):
-        if isinstance(other, PacketSize):
-            result_format = BitrateFormat[self.format] \
-                    if BitrateFormat[self.format].value > BitrateFormat[other.format].value \
-                    else BitrateFormat[other.format]
-            result_number = operation(self.bit_value, other.bit_value) / result_format.value
+        if isinstance(other, str):
+            other = PacketSize(other)
+
+        if type(other) == Percent:
+            result_rate = self.rate
+            result_number = operation(other, self.units)
+        elif type(other) == PacketSize:
+            result_rate = self.rate if self.rate > other.rate else other.rate
+            result_number = operation(self.units, other.units) / result_rate
         elif isinstance(other, (int, float)):
-            result_format = BitrateFormat[self.format]
-            result_number = operation(self.bit_value, other) / result_format.value
+            result_rate = self.rate
+            result_number = operation(self.units, other) / result_rate
         else:
             raise ValueError("Argument '{}' not match operation {}".format(other, operation))
 
-        return PacketSize(number=result_number, format=result_format.name)
+        return PacketSize(number=result_number, rate=result_rate.name)
 
     def __eq__(self, other):
         return self._compare_operation(other, operator.eq)
@@ -153,49 +121,38 @@ class PacketSize(type):
     def __add__(self, other):
         return self._execute_operation(other, operator.add)
 
+    def __iadd__(self, other):
+        added = self._execute_operation(other, operator.add)
+        self._rate = added._rate
+        self._units = added._units
+        return self
+
+    def __radd__(self, other):
+        if other == 0:
+            return self
+        else:
+            return self + other
+
     def __sub__(self, other):
-        return self._execute_operation(other, operator.sub)
+        added = self._execute_operation(other, operator.sub)
+        self._rate = added._rate
+        self._units = added._units
+        return self
+
+    def __isub__(self, other):
+        subbed = self._execute_operation(other, operator.sub)
+        self._rate = subbed._rate
+        self._units = subbed._units
+        return self
 
     def __mul__(self, other):
         return self._execute_operation(other, operator.mul)
 
+    def __imul__(self, other):
+        return self._execute_operation(other, operator.imul)
+
     def __truediv__(self, other):
         return self._execute_operation(other, operator.truediv)
 
-    @staticmethod
-    def sum(*packet_list, **kwargs):
-        _list = list(packet_list)
-        if _list.__len__() == 0:
-            return PacketSize(number=0, **kwargs)
-        _res = PacketSize(_list.pop())
-        while _list.__len__() > 0:
-            _next = _list.pop()
-            _next.format = _res.format
-            _res += PacketSize(_next, **kwargs)
-        return _res
-
-    @staticmethod
-    def min(*packet_list, **kwargs):
-        _list = list(packet_list)
-        if _list.__len__() == 0:
-            return PacketSize(number=0, **kwargs)
-        _res = PacketSize(_list.pop(), **kwargs)
-        while _list.__len__() > 0:
-            _next = _list.pop()
-            _next.format = _res.format
-            if _next < _res:
-                _res = _next
-        return _res
-
-    @staticmethod
-    def max(*packet_list, **kwargs):
-        _list = list(packet_list)
-        if _list.__len__() == 0:
-            return PacketSize(number=0, **kwargs)
-        _res = PacketSize(_list.pop(), **kwargs)
-        while _list.__len__() > 0:
-            _next = _list.pop()
-            _next.format = _res.format
-            if _next > _res:
-                _res = _next
-        return _res
+    def __itruediv__(self, other):
+        return self._execute_operation(other, operator.itruediv)
