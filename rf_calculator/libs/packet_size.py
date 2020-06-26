@@ -3,10 +3,8 @@ import enum
 import operator
 import re
 
-from robot.api import logger
 
-
-class _BitrateFormat(enum.IntEnum):
+class BitrateFormat(enum.IntEnum):
     b = 1
     B = 8
     k = 1000
@@ -33,7 +31,7 @@ class PacketSize(type):
         if bitrate_input is None:
             cls.__number: float = float(kwargs.get('number', -1))
             cls.__format_number()
-            cls.format = kwargs.get('format', _BitrateFormat.b.name)
+            cls.format = kwargs.get('format', BitrateFormat.b.name)
         else:
             cls.__parse(bitrate_input)
 
@@ -48,8 +46,6 @@ class PacketSize(type):
             if format_spec != '':
                 self.__str_format = "{{:{new_format}}}{{}}".format(new_format=format_spec)
             return str(self)
-        except Exception as e:
-            logger.error(e)
         finally:
             self.__str_format = old_format
 
@@ -71,8 +67,7 @@ class PacketSize(type):
             self.__format_number()
             self.format = m.groups()[1]
         except Exception as e:
-            logger.error("Cannot parse PacketSize value string '{}' with error: {}".format(bitrate_str, e))
-            raise e
+            raise type(e)("Cannot parse PacketSize value string '{}' with error: {}".format(bitrate_str, e))
 
     @property
     def bit_value(self):
@@ -85,7 +80,7 @@ class PacketSize(type):
     def print(self, f=None):
         pattern = re.compile(r'(\d+)(.(\d+))?')
         if f is not None:
-            _format = _BitrateFormat[f]
+            _format = BitrateFormat[f]
         else:
             _format = self._get_optimal_format()
 
@@ -93,7 +88,7 @@ class PacketSize(type):
 
     def _get_optimal_format(self):
         pattern = re.compile(r'(\d+)(.([\de\-g]+))?')
-        for _f in _BitrateFormat:
+        for _f in BitrateFormat:
             example = self.print(_f.name)
             try:
                 _, bc, _, ac, b = pattern.split(example)
@@ -101,11 +96,11 @@ class PacketSize(type):
                 bc_len = len(str(bc))
                 ac_len = len(str(ac_int))
                 if b == b.upper() and bc_len > ac_len:
-                    return _BitrateFormat[b]
+                    return BitrateFormat[b]
             except Exception as e:
                 print(e)
 
-        return _BitrateFormat.K
+        return BitrateFormat.K
 
     @property
     def format(self):
@@ -113,7 +108,7 @@ class PacketSize(type):
 
     @format.setter
     def format(self, value):
-        self.__format = _BitrateFormat[value] if value != '' else _BitrateFormat.b
+        self.__format = BitrateFormat[value] if value != '' else BitrateFormat.b
 
     def _compare_operation(self, other, operation: operator):
         if isinstance(other, PacketSize):
@@ -125,12 +120,12 @@ class PacketSize(type):
 
     def _execute_operation(self, other, operation: operator):
         if isinstance(other, PacketSize):
-            result_format = _BitrateFormat[self.format] \
-                    if _BitrateFormat[self.format].value > _BitrateFormat[other.format].value \
-                    else _BitrateFormat[other.format]
+            result_format = BitrateFormat[self.format] \
+                    if BitrateFormat[self.format].value > BitrateFormat[other.format].value \
+                    else BitrateFormat[other.format]
             result_number = operation(self.bit_value, other.bit_value) / result_format.value
         elif isinstance(other, (int, float)):
-            result_format = _BitrateFormat[self.format]
+            result_format = BitrateFormat[self.format]
             result_number = operation(self.bit_value, other) / result_format.value
         else:
             raise ValueError("Argument '{}' not match operation {}".format(other, operation))
