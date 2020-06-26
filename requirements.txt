@@ -1,1 +1,2 @@
-robotframework
+robotframework~=3.2.1
+setuptools~=41.0.0
