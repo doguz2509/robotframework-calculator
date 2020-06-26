@@ -1,8 +1,7 @@
 
 __version__ = '1.0'
 
-import libs
-
+from . import libs
 
 __all__ = [
     'libs',
