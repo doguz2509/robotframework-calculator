@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.1 (Python 3.7.2 on win32)" generated="20200629 14:57:33.659" rpa="false">
-<suite id="s1" name="Tests" source="C:\git\robotframework-calculator\robot_math\tests">
-<suite id="s1-s1" name="RF MATH SEJFTEST" source="C:\git\robotframework-calculator\robot_math\tests\RF_MATH_SEJFTEST.robot">
+<robot generator="Robot 3.2.1 (Python 3.7.2 on win32)" generated="20200629 15:13:27.225" rpa="false">
+<suite id="s1" name="Tests" source="C:\git\robotframework-calculator\build\lib\robot_math\tests">
+<suite id="s1-s1" name="RF MATH SEJFTEST" source="C:\git\robotframework-calculator\build\lib\robot_math\tests\RF_MATH_SEJFTEST.robot">
 <test id="s1-s1-t1" name="Packet test">
 <kw name="executor">
 <arguments>
 <arg>PACKET_OPERATION</arg>
 <arg>10M==80m</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.792" level="TRACE">Arguments: [ ${keyword}='PACKET_OPERATION' | ${expression}='10M==80m' | ${expected}='PASS' | ${deviation}='' | ${reason}='' ]</msg>
+<msg timestamp="20200629 15:13:27.365" level="TRACE">Arguments: [ ${keyword}='PACKET_OPERATION' | ${expression}='10M==80m' | ${expected}='PASS' | ${deviation}='' | ${reason}='' ]</msg>
 <kw name="Run Keyword And Ignore Error" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
 <arguments>
@@ -20,7 +20,7 @@
 <assign>
 <var>${st}</var>
 </assign>
-<msg timestamp="20200629 14:57:33.794" level="TRACE">Arguments: [ 'PACKET_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
+<msg timestamp="20200629 15:13:27.368" level="TRACE">Arguments: [ 'PACKET_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
 <kw name="PACKET_OPERATION" library="robot_math.ROBOT_MATH">
 <doc>Provide logical and mathematical operation with packet</doc>
 <arguments>
@@ -28,16 +28,16 @@
 <arg>deviation_str=${deviation}</arg>
 <arg>reason=${reason}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.796" level="TRACE">Arguments: [ '10M==80m' | deviation_str='' | reason='' ]</msg>
-<msg timestamp="20200629 14:57:33.796" level="TRACE">10M==80m</msg>
-<msg timestamp="20200629 14:57:33.798" level="TRACE">10.0M eq 80.0m)</msg>
-<msg timestamp="20200629 14:57:33.798" level="DEBUG">Result: True</msg>
-<msg timestamp="20200629 14:57:33.798" level="TRACE">Return: True</msg>
-<status status="PASS" starttime="20200629 14:57:33.795" endtime="20200629 14:57:33.798"></status>
+<msg timestamp="20200629 15:13:27.371" level="TRACE">Arguments: [ '10M==80m' | deviation_str='' | reason='' ]</msg>
+<msg timestamp="20200629 15:13:27.372" level="TRACE">10M==80m</msg>
+<msg timestamp="20200629 15:13:27.374" level="TRACE">10.0M eq 80.0m)</msg>
+<msg timestamp="20200629 15:13:27.374" level="DEBUG">Result: True</msg>
+<msg timestamp="20200629 15:13:27.374" level="TRACE">Return: True</msg>
+<status status="PASS" starttime="20200629 15:13:27.369" endtime="20200629 15:13:27.374"></status>
 </kw>
-<msg timestamp="20200629 14:57:33.798" level="TRACE">Return: ('PASS', True)</msg>
-<msg timestamp="20200629 14:57:33.798" level="INFO">${st} = ('PASS', True)</msg>
-<status status="PASS" starttime="20200629 14:57:33.793" endtime="20200629 14:57:33.798"></status>
+<msg timestamp="20200629 15:13:27.375" level="TRACE">Return: ('PASS', True)</msg>
+<msg timestamp="20200629 15:13:27.375" level="INFO">${st} = ('PASS', True)</msg>
+<status status="PASS" starttime="20200629 15:13:27.367" endtime="20200629 15:13:27.375"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -46,9 +46,9 @@
 <arg>fail</arg>
 <arg>Expression ${expression} failed</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.799" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
-<msg timestamp="20200629 14:57:33.800" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.799" endtime="20200629 14:57:33.800"></status>
+<msg timestamp="20200629 15:13:27.377" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
+<msg timestamp="20200629 15:13:27.378" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.376" endtime="20200629 15:13:27.378"></status>
 </kw>
 <kw name="Set Test Message" library="BuiltIn">
 <doc>Sets message for the current test case.</doc>
@@ -56,15 +56,15 @@
 <arg>Expression ${expression} completed with: ${st}[1] (Expected: ${expected} vs. Real: ${st}[0])\n</arg>
 <arg>append=${TRUE}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.802" level="TRACE">Arguments: [ 'Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
-<msg timestamp="20200629 14:57:33.803" level="INFO">Set test message to:
+<msg timestamp="20200629 15:13:27.381" level="TRACE">Arguments: [ 'Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
+<msg timestamp="20200629 15:13:27.382" level="INFO">Set test message to:
 Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 </msg>
-<msg timestamp="20200629 14:57:33.803" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.801" endtime="20200629 14:57:33.803"></status>
+<msg timestamp="20200629 15:13:27.382" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.378" endtime="20200629 15:13:27.383"></status>
 </kw>
-<msg timestamp="20200629 14:57:33.804" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.790" endtime="20200629 14:57:33.804"></status>
+<msg timestamp="20200629 15:13:27.383" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.362" endtime="20200629 15:13:27.383"></status>
 </kw>
 <kw name="executor">
 <arguments>
@@ -72,7 +72,7 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>10M==9M</arg>
 <arg>deviation=10%</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.807" level="TRACE">Arguments: [ ${keyword}='PACKET_OPERATION' | ${expression}='10M==9M' | ${expected}='PASS' | ${deviation}='10%' | ${reason}='' ]</msg>
+<msg timestamp="20200629 15:13:27.387" level="TRACE">Arguments: [ ${keyword}='PACKET_OPERATION' | ${expression}='10M==9M' | ${expected}='PASS' | ${deviation}='10%' | ${reason}='' ]</msg>
 <kw name="Run Keyword And Ignore Error" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
 <arguments>
@@ -84,7 +84,7 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <assign>
 <var>${st}</var>
 </assign>
-<msg timestamp="20200629 14:57:33.809" level="TRACE">Arguments: [ 'PACKET_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
+<msg timestamp="20200629 15:13:27.389" level="TRACE">Arguments: [ 'PACKET_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
 <kw name="PACKET_OPERATION" library="robot_math.ROBOT_MATH">
 <doc>Provide logical and mathematical operation with packet</doc>
 <arguments>
@@ -92,18 +92,18 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>deviation_str=${deviation}</arg>
 <arg>reason=${reason}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.813" level="TRACE">Arguments: [ '10M==9M' | deviation_str='10%' | reason='' ]</msg>
-<msg timestamp="20200629 14:57:33.813" level="TRACE">10M==9M, 10%</msg>
-<msg timestamp="20200629 14:57:33.813" level="TRACE">10.0M eq 9.0M (Deviation: +/-10.00%)</msg>
-<msg timestamp="20200629 14:57:33.814" level="DEBUG">Number 80000000 sub (+/-10.00%) = 72000000.0</msg>
-<msg timestamp="20200629 14:57:33.814" level="DEBUG">Number 80000000 add (+/-10.00%) = 88000000.0</msg>
-<msg timestamp="20200629 14:57:33.814" level="DEBUG">Result: True</msg>
-<msg timestamp="20200629 14:57:33.814" level="TRACE">Return: True</msg>
-<status status="PASS" starttime="20200629 14:57:33.810" endtime="20200629 14:57:33.814"></status>
+<msg timestamp="20200629 15:13:27.391" level="TRACE">Arguments: [ '10M==9M' | deviation_str='10%' | reason='' ]</msg>
+<msg timestamp="20200629 15:13:27.392" level="TRACE">10M==9M, 10%</msg>
+<msg timestamp="20200629 15:13:27.392" level="TRACE">10.0M eq 9.0M (Deviation: +/-10.00%)</msg>
+<msg timestamp="20200629 15:13:27.393" level="DEBUG">Number 80000000 sub (+/-10.00%) = 72000000.0</msg>
+<msg timestamp="20200629 15:13:27.393" level="DEBUG">Number 80000000 add (+/-10.00%) = 88000000.0</msg>
+<msg timestamp="20200629 15:13:27.393" level="DEBUG">Result: True</msg>
+<msg timestamp="20200629 15:13:27.394" level="TRACE">Return: True</msg>
+<status status="PASS" starttime="20200629 15:13:27.390" endtime="20200629 15:13:27.394"></status>
 </kw>
-<msg timestamp="20200629 14:57:33.815" level="TRACE">Return: ('PASS', True)</msg>
-<msg timestamp="20200629 14:57:33.815" level="INFO">${st} = ('PASS', True)</msg>
-<status status="PASS" starttime="20200629 14:57:33.808" endtime="20200629 14:57:33.815"></status>
+<msg timestamp="20200629 15:13:27.394" level="TRACE">Return: ('PASS', True)</msg>
+<msg timestamp="20200629 15:13:27.394" level="INFO">${st} = ('PASS', True)</msg>
+<status status="PASS" starttime="20200629 15:13:27.388" endtime="20200629 15:13:27.395"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -112,9 +112,9 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>fail</arg>
 <arg>Expression ${expression} failed</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.816" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
-<msg timestamp="20200629 14:57:33.816" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.815" endtime="20200629 14:57:33.816"></status>
+<msg timestamp="20200629 15:13:27.397" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
+<msg timestamp="20200629 15:13:27.398" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.396" endtime="20200629 15:13:27.398"></status>
 </kw>
 <kw name="Set Test Message" library="BuiltIn">
 <doc>Sets message for the current test case.</doc>
@@ -122,16 +122,16 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>Expression ${expression} completed with: ${st}[1] (Expected: ${expected} vs. Real: ${st}[0])\n</arg>
 <arg>append=${TRUE}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.818" level="TRACE">Arguments: [ 'Expression 10M==9M completed with: True (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
-<msg timestamp="20200629 14:57:33.818" level="INFO">Set test message to:
+<msg timestamp="20200629 15:13:27.401" level="TRACE">Arguments: [ 'Expression 10M==9M completed with: True (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
+<msg timestamp="20200629 15:13:27.401" level="INFO">Set test message to:
 Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 10M==9M completed with: True (Expected: PASS vs. Real: PASS)
 </msg>
-<msg timestamp="20200629 14:57:33.818" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.817" endtime="20200629 14:57:33.818"></status>
+<msg timestamp="20200629 15:13:27.401" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.399" endtime="20200629 15:13:27.401"></status>
 </kw>
-<msg timestamp="20200629 14:57:33.818" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.805" endtime="20200629 14:57:33.819"></status>
+<msg timestamp="20200629 15:13:27.402" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.384" endtime="20200629 15:13:27.402"></status>
 </kw>
 <kw name="executor">
 <arguments>
@@ -139,7 +139,7 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>10M&gt;80m</arg>
 <arg>expected=FAIL</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.821" level="TRACE">Arguments: [ ${keyword}='PACKET_OPERATION' | ${expression}='10M&gt;80m' | ${expected}='FAIL' | ${deviation}='' | ${reason}='' ]</msg>
+<msg timestamp="20200629 15:13:27.406" level="TRACE">Arguments: [ ${keyword}='PACKET_OPERATION' | ${expression}='10M&gt;80m' | ${expected}='FAIL' | ${deviation}='' | ${reason}='' ]</msg>
 <kw name="Run Keyword And Ignore Error" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
 <arguments>
@@ -151,7 +151,7 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <assign>
 <var>${st}</var>
 </assign>
-<msg timestamp="20200629 14:57:33.822" level="TRACE">Arguments: [ 'PACKET_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
+<msg timestamp="20200629 15:13:27.409" level="TRACE">Arguments: [ 'PACKET_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
 <kw name="PACKET_OPERATION" library="robot_math.ROBOT_MATH">
 <doc>Provide logical and mathematical operation with packet</doc>
 <arguments>
@@ -159,21 +159,21 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>deviation_str=${deviation}</arg>
 <arg>reason=${reason}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.824" level="TRACE">Arguments: [ '10M&gt;80m' | deviation_str='' | reason='' ]</msg>
-<msg timestamp="20200629 14:57:33.824" level="TRACE">10M&gt;80m</msg>
-<msg timestamp="20200629 14:57:33.824" level="TRACE">10.0M gt 80.0m)</msg>
-<msg timestamp="20200629 14:57:33.824" level="DEBUG">Result: False</msg>
-<msg timestamp="20200629 14:57:33.826" level="FAIL">AssertionError</msg>
-<msg timestamp="20200629 14:57:33.826" level="DEBUG">Traceback (most recent call last):
+<msg timestamp="20200629 15:13:27.413" level="TRACE">Arguments: [ '10M&gt;80m' | deviation_str='' | reason='' ]</msg>
+<msg timestamp="20200629 15:13:27.420" level="TRACE">10M&gt;80m</msg>
+<msg timestamp="20200629 15:13:27.421" level="TRACE">10.0M gt 80.0m)</msg>
+<msg timestamp="20200629 15:13:27.421" level="DEBUG">Result: False</msg>
+<msg timestamp="20200629 15:13:27.423" level="FAIL">AssertionError</msg>
+<msg timestamp="20200629 15:13:27.424" level="DEBUG">Traceback (most recent call last):
   File "C:\git\robotframework-calculator\robot_math\ROBOT_MATH.py", line 158, in packet_operation
     raise e
   File "C:\git\robotframework-calculator\robot_math\ROBOT_MATH.py", line 155, in packet_operation
     assert result is not False, f"{operand1} {operation.__name__} {operand2} False" if reason is None else reason</msg>
-<status status="FAIL" starttime="20200629 14:57:33.823" endtime="20200629 14:57:33.826"></status>
+<status status="FAIL" starttime="20200629 15:13:27.410" endtime="20200629 15:13:27.424"></status>
 </kw>
-<msg timestamp="20200629 14:57:33.826" level="TRACE">Return: ('FAIL', 'AssertionError')</msg>
-<msg timestamp="20200629 14:57:33.826" level="INFO">${st} = ('FAIL', 'AssertionError')</msg>
-<status status="PASS" starttime="20200629 14:57:33.822" endtime="20200629 14:57:33.826"></status>
+<msg timestamp="20200629 15:13:27.424" level="TRACE">Return: ('FAIL', 'AssertionError')</msg>
+<msg timestamp="20200629 15:13:27.425" level="INFO">${st} = ('FAIL', 'AssertionError')</msg>
+<status status="PASS" starttime="20200629 15:13:27.408" endtime="20200629 15:13:27.425"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -182,9 +182,9 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>fail</arg>
 <arg>Expression ${expression} failed</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.828" level="TRACE">Arguments: [ "'FAIL' != 'FAIL'" | 'fail' | 'Expression ${expression} failed' ]</msg>
-<msg timestamp="20200629 14:57:33.829" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.827" endtime="20200629 14:57:33.829"></status>
+<msg timestamp="20200629 15:13:27.426" level="TRACE">Arguments: [ "'FAIL' != 'FAIL'" | 'fail' | 'Expression ${expression} failed' ]</msg>
+<msg timestamp="20200629 15:13:27.427" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.425" endtime="20200629 15:13:27.427"></status>
 </kw>
 <kw name="Set Test Message" library="BuiltIn">
 <doc>Sets message for the current test case.</doc>
@@ -192,17 +192,17 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>Expression ${expression} completed with: ${st}[1] (Expected: ${expected} vs. Real: ${st}[0])\n</arg>
 <arg>append=${TRUE}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.831" level="TRACE">Arguments: [ 'Expression 10M&gt;80m completed with: AssertionError (Expected: FAIL vs. Real: FAIL)\n' | append=True ]</msg>
-<msg timestamp="20200629 14:57:33.831" level="INFO">Set test message to:
+<msg timestamp="20200629 15:13:27.431" level="TRACE">Arguments: [ 'Expression 10M&gt;80m completed with: AssertionError (Expected: FAIL vs. Real: FAIL)\n' | append=True ]</msg>
+<msg timestamp="20200629 15:13:27.432" level="INFO">Set test message to:
 Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 10M==9M completed with: True (Expected: PASS vs. Real: PASS)
  Expression 10M&gt;80m completed with: AssertionError (Expected: FAIL vs. Real: FAIL)
 </msg>
-<msg timestamp="20200629 14:57:33.831" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.829" endtime="20200629 14:57:33.831"></status>
+<msg timestamp="20200629 15:13:27.432" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.428" endtime="20200629 15:13:27.432"></status>
 </kw>
-<msg timestamp="20200629 14:57:33.831" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.819" endtime="20200629 14:57:33.832"></status>
+<msg timestamp="20200629 15:13:27.433" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.404" endtime="20200629 15:13:27.433"></status>
 </kw>
 <kw name="executor">
 <arguments>
@@ -211,7 +211,7 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>expected=FAIL</arg>
 <arg>reason=My reason to fail</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.835" level="TRACE">Arguments: [ ${keyword}='PACKET_OPERATION' | ${expression}='10M&lt;80m' | ${expected}='FAIL' | ${deviation}='' | ${reason}='My reason to fail' ]</msg>
+<msg timestamp="20200629 15:13:27.437" level="TRACE">Arguments: [ ${keyword}='PACKET_OPERATION' | ${expression}='10M&lt;80m' | ${expected}='FAIL' | ${deviation}='' | ${reason}='My reason to fail' ]</msg>
 <kw name="Run Keyword And Ignore Error" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
 <arguments>
@@ -223,7 +223,7 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <assign>
 <var>${st}</var>
 </assign>
-<msg timestamp="20200629 14:57:33.836" level="TRACE">Arguments: [ 'PACKET_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
+<msg timestamp="20200629 15:13:27.439" level="TRACE">Arguments: [ 'PACKET_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
 <kw name="PACKET_OPERATION" library="robot_math.ROBOT_MATH">
 <doc>Provide logical and mathematical operation with packet</doc>
 <arguments>
@@ -231,21 +231,21 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>deviation_str=${deviation}</arg>
 <arg>reason=${reason}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.838" level="TRACE">Arguments: [ '10M&lt;80m' | deviation_str='' | reason='My reason to fail' ]</msg>
-<msg timestamp="20200629 14:57:33.838" level="TRACE">10M&lt;80m</msg>
-<msg timestamp="20200629 14:57:33.839" level="TRACE">10.0M lt 80.0m)</msg>
-<msg timestamp="20200629 14:57:33.839" level="DEBUG">Result: False</msg>
-<msg timestamp="20200629 14:57:33.839" level="FAIL">My reason to fail</msg>
-<msg timestamp="20200629 14:57:33.840" level="DEBUG">Traceback (most recent call last):
+<msg timestamp="20200629 15:13:27.442" level="TRACE">Arguments: [ '10M&lt;80m' | deviation_str='' | reason='My reason to fail' ]</msg>
+<msg timestamp="20200629 15:13:27.443" level="TRACE">10M&lt;80m</msg>
+<msg timestamp="20200629 15:13:27.443" level="TRACE">10.0M lt 80.0m)</msg>
+<msg timestamp="20200629 15:13:27.443" level="DEBUG">Result: False</msg>
+<msg timestamp="20200629 15:13:27.444" level="FAIL">My reason to fail</msg>
+<msg timestamp="20200629 15:13:27.445" level="DEBUG">Traceback (most recent call last):
   File "C:\git\robotframework-calculator\robot_math\ROBOT_MATH.py", line 158, in packet_operation
     raise e
   File "C:\git\robotframework-calculator\robot_math\ROBOT_MATH.py", line 155, in packet_operation
     assert result is not False, f"{operand1} {operation.__name__} {operand2} False" if reason is None else reason</msg>
-<status status="FAIL" starttime="20200629 14:57:33.836" endtime="20200629 14:57:33.840"></status>
+<status status="FAIL" starttime="20200629 15:13:27.440" endtime="20200629 15:13:27.445"></status>
 </kw>
-<msg timestamp="20200629 14:57:33.840" level="TRACE">Return: ('FAIL', 'My reason to fail')</msg>
-<msg timestamp="20200629 14:57:33.840" level="INFO">${st} = ('FAIL', 'My reason to fail')</msg>
-<status status="PASS" starttime="20200629 14:57:33.836" endtime="20200629 14:57:33.840"></status>
+<msg timestamp="20200629 15:13:27.445" level="TRACE">Return: ('FAIL', 'My reason to fail')</msg>
+<msg timestamp="20200629 15:13:27.446" level="INFO">${st} = ('FAIL', 'My reason to fail')</msg>
+<status status="PASS" starttime="20200629 15:13:27.438" endtime="20200629 15:13:27.446"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -254,9 +254,9 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>fail</arg>
 <arg>Expression ${expression} failed</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.841" level="TRACE">Arguments: [ "'FAIL' != 'FAIL'" | 'fail' | 'Expression ${expression} failed' ]</msg>
-<msg timestamp="20200629 14:57:33.841" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.840" endtime="20200629 14:57:33.841"></status>
+<msg timestamp="20200629 15:13:27.448" level="TRACE">Arguments: [ "'FAIL' != 'FAIL'" | 'fail' | 'Expression ${expression} failed' ]</msg>
+<msg timestamp="20200629 15:13:27.449" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.447" endtime="20200629 15:13:27.449"></status>
 </kw>
 <kw name="Set Test Message" library="BuiltIn">
 <doc>Sets message for the current test case.</doc>
@@ -264,25 +264,25 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>Expression ${expression} completed with: ${st}[1] (Expected: ${expected} vs. Real: ${st}[0])\n</arg>
 <arg>append=${TRUE}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.843" level="TRACE">Arguments: [ 'Expression 10M&lt;80m completed with: My reason to fail (Expected: FAIL vs. Real: FAIL)\n' | append=True ]</msg>
-<msg timestamp="20200629 14:57:33.843" level="INFO">Set test message to:
+<msg timestamp="20200629 15:13:27.451" level="TRACE">Arguments: [ 'Expression 10M&lt;80m completed with: My reason to fail (Expected: FAIL vs. Real: FAIL)\n' | append=True ]</msg>
+<msg timestamp="20200629 15:13:27.452" level="INFO">Set test message to:
 Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 10M==9M completed with: True (Expected: PASS vs. Real: PASS)
  Expression 10M&gt;80m completed with: AssertionError (Expected: FAIL vs. Real: FAIL)
  Expression 10M&lt;80m completed with: My reason to fail (Expected: FAIL vs. Real: FAIL)
 </msg>
-<msg timestamp="20200629 14:57:33.843" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.842" endtime="20200629 14:57:33.844"></status>
+<msg timestamp="20200629 15:13:27.452" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.449" endtime="20200629 15:13:27.452"></status>
 </kw>
-<msg timestamp="20200629 14:57:33.844" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.832" endtime="20200629 14:57:33.844"></status>
+<msg timestamp="20200629 15:13:27.453" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.434" endtime="20200629 15:13:27.453"></status>
 </kw>
 <kw name="executor">
 <arguments>
 <arg>PACKET_OPERATION</arg>
 <arg>100M+10%</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.847" level="TRACE">Arguments: [ ${keyword}='PACKET_OPERATION' | ${expression}='100M+10%' | ${expected}='PASS' | ${deviation}='' | ${reason}='' ]</msg>
+<msg timestamp="20200629 15:13:27.455" level="TRACE">Arguments: [ ${keyword}='PACKET_OPERATION' | ${expression}='100M+10%' | ${expected}='PASS' | ${deviation}='' | ${reason}='' ]</msg>
 <kw name="Run Keyword And Ignore Error" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
 <arguments>
@@ -294,7 +294,7 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <assign>
 <var>${st}</var>
 </assign>
-<msg timestamp="20200629 14:57:33.848" level="TRACE">Arguments: [ 'PACKET_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
+<msg timestamp="20200629 15:13:27.456" level="TRACE">Arguments: [ 'PACKET_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
 <kw name="PACKET_OPERATION" library="robot_math.ROBOT_MATH">
 <doc>Provide logical and mathematical operation with packet</doc>
 <arguments>
@@ -302,17 +302,17 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>deviation_str=${deviation}</arg>
 <arg>reason=${reason}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.850" level="TRACE">Arguments: [ '100M+10%' | deviation_str='' | reason='' ]</msg>
-<msg timestamp="20200629 14:57:33.850" level="TRACE">100M+10%</msg>
-<msg timestamp="20200629 14:57:33.851" level="TRACE">100.0M add +/-10.00%)</msg>
-<msg timestamp="20200629 14:57:33.851" level="DEBUG">Number 800000000 add (+/-10.00%) = 880000000.0000001</msg>
-<msg timestamp="20200629 14:57:33.851" level="DEBUG">Result: 110.0M</msg>
-<msg timestamp="20200629 14:57:33.851" level="TRACE">Return: 110.0M</msg>
-<status status="PASS" starttime="20200629 14:57:33.849" endtime="20200629 14:57:33.852"></status>
+<msg timestamp="20200629 15:13:27.459" level="TRACE">Arguments: [ '100M+10%' | deviation_str='' | reason='' ]</msg>
+<msg timestamp="20200629 15:13:27.460" level="TRACE">100M+10%</msg>
+<msg timestamp="20200629 15:13:27.460" level="TRACE">100.0M add +/-10.00%)</msg>
+<msg timestamp="20200629 15:13:27.461" level="DEBUG">Number 800000000 add (+/-10.00%) = 880000000.0000001</msg>
+<msg timestamp="20200629 15:13:27.461" level="DEBUG">Result: 110.0M</msg>
+<msg timestamp="20200629 15:13:27.461" level="TRACE">Return: 110.0M</msg>
+<status status="PASS" starttime="20200629 15:13:27.457" endtime="20200629 15:13:27.461"></status>
 </kw>
-<msg timestamp="20200629 14:57:33.852" level="TRACE">Return: ('PASS', 110.0M)</msg>
-<msg timestamp="20200629 14:57:33.852" level="INFO">${st} = ('PASS', 110.0M)</msg>
-<status status="PASS" starttime="20200629 14:57:33.848" endtime="20200629 14:57:33.852"></status>
+<msg timestamp="20200629 15:13:27.462" level="TRACE">Return: ('PASS', 110.0M)</msg>
+<msg timestamp="20200629 15:13:27.462" level="INFO">${st} = ('PASS', 110.0M)</msg>
+<status status="PASS" starttime="20200629 15:13:27.456" endtime="20200629 15:13:27.463"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -321,9 +321,9 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>fail</arg>
 <arg>Expression ${expression} failed</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.853" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
-<msg timestamp="20200629 14:57:33.853" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.852" endtime="20200629 14:57:33.853"></status>
+<msg timestamp="20200629 15:13:27.465" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
+<msg timestamp="20200629 15:13:27.465" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.464" endtime="20200629 15:13:27.466"></status>
 </kw>
 <kw name="Set Test Message" library="BuiltIn">
 <doc>Sets message for the current test case.</doc>
@@ -331,26 +331,26 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>Expression ${expression} completed with: ${st}[1] (Expected: ${expected} vs. Real: ${st}[0])\n</arg>
 <arg>append=${TRUE}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.855" level="TRACE">Arguments: [ 'Expression 100M+10% completed with: 110.0M (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
-<msg timestamp="20200629 14:57:33.855" level="INFO">Set test message to:
+<msg timestamp="20200629 15:13:27.468" level="TRACE">Arguments: [ 'Expression 100M+10% completed with: 110.0M (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
+<msg timestamp="20200629 15:13:27.469" level="INFO">Set test message to:
 Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 10M==9M completed with: True (Expected: PASS vs. Real: PASS)
  Expression 10M&gt;80m completed with: AssertionError (Expected: FAIL vs. Real: FAIL)
  Expression 10M&lt;80m completed with: My reason to fail (Expected: FAIL vs. Real: FAIL)
  Expression 100M+10% completed with: 110.0M (Expected: PASS vs. Real: PASS)
 </msg>
-<msg timestamp="20200629 14:57:33.855" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.854" endtime="20200629 14:57:33.856"></status>
+<msg timestamp="20200629 15:13:27.469" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.466" endtime="20200629 15:13:27.469"></status>
 </kw>
-<msg timestamp="20200629 14:57:33.856" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.845" endtime="20200629 14:57:33.856"></status>
+<msg timestamp="20200629 15:13:27.469" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.454" endtime="20200629 15:13:27.470"></status>
 </kw>
 <kw name="executor">
 <arguments>
 <arg>PACKET_OPERATION</arg>
 <arg>100M + 10%</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.858" level="TRACE">Arguments: [ ${keyword}='PACKET_OPERATION' | ${expression}='100M + 10%' | ${expected}='PASS' | ${deviation}='' | ${reason}='' ]</msg>
+<msg timestamp="20200629 15:13:27.471" level="TRACE">Arguments: [ ${keyword}='PACKET_OPERATION' | ${expression}='100M + 10%' | ${expected}='PASS' | ${deviation}='' | ${reason}='' ]</msg>
 <kw name="Run Keyword And Ignore Error" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
 <arguments>
@@ -362,7 +362,7 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <assign>
 <var>${st}</var>
 </assign>
-<msg timestamp="20200629 14:57:33.859" level="TRACE">Arguments: [ 'PACKET_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
+<msg timestamp="20200629 15:13:27.474" level="TRACE">Arguments: [ 'PACKET_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
 <kw name="PACKET_OPERATION" library="robot_math.ROBOT_MATH">
 <doc>Provide logical and mathematical operation with packet</doc>
 <arguments>
@@ -370,17 +370,17 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>deviation_str=${deviation}</arg>
 <arg>reason=${reason}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.862" level="TRACE">Arguments: [ '100M + 10%' | deviation_str='' | reason='' ]</msg>
-<msg timestamp="20200629 14:57:33.863" level="TRACE">100M + 10%</msg>
-<msg timestamp="20200629 14:57:33.863" level="TRACE">100.0M add +/-10.00%)</msg>
-<msg timestamp="20200629 14:57:33.864" level="DEBUG">Number 800000000 add (+/-10.00%) = 880000000.0000001</msg>
-<msg timestamp="20200629 14:57:33.864" level="DEBUG">Result: 110.0M</msg>
-<msg timestamp="20200629 14:57:33.865" level="TRACE">Return: 110.0M</msg>
-<status status="PASS" starttime="20200629 14:57:33.860" endtime="20200629 14:57:33.865"></status>
+<msg timestamp="20200629 15:13:27.476" level="TRACE">Arguments: [ '100M + 10%' | deviation_str='' | reason='' ]</msg>
+<msg timestamp="20200629 15:13:27.476" level="TRACE">100M + 10%</msg>
+<msg timestamp="20200629 15:13:27.476" level="TRACE">100.0M add +/-10.00%)</msg>
+<msg timestamp="20200629 15:13:27.477" level="DEBUG">Number 800000000 add (+/-10.00%) = 880000000.0000001</msg>
+<msg timestamp="20200629 15:13:27.477" level="DEBUG">Result: 110.0M</msg>
+<msg timestamp="20200629 15:13:27.477" level="TRACE">Return: 110.0M</msg>
+<status status="PASS" starttime="20200629 15:13:27.474" endtime="20200629 15:13:27.477"></status>
 </kw>
-<msg timestamp="20200629 14:57:33.865" level="TRACE">Return: ('PASS', 110.0M)</msg>
-<msg timestamp="20200629 14:57:33.866" level="INFO">${st} = ('PASS', 110.0M)</msg>
-<status status="PASS" starttime="20200629 14:57:33.859" endtime="20200629 14:57:33.866"></status>
+<msg timestamp="20200629 15:13:27.477" level="TRACE">Return: ('PASS', 110.0M)</msg>
+<msg timestamp="20200629 15:13:27.478" level="INFO">${st} = ('PASS', 110.0M)</msg>
+<status status="PASS" starttime="20200629 15:13:27.473" endtime="20200629 15:13:27.478"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -389,9 +389,9 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>fail</arg>
 <arg>Expression ${expression} failed</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.867" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
-<msg timestamp="20200629 14:57:33.868" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.866" endtime="20200629 14:57:33.868"></status>
+<msg timestamp="20200629 15:13:27.480" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
+<msg timestamp="20200629 15:13:27.481" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.478" endtime="20200629 15:13:27.481"></status>
 </kw>
 <kw name="Set Test Message" library="BuiltIn">
 <doc>Sets message for the current test case.</doc>
@@ -399,8 +399,8 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>Expression ${expression} completed with: ${st}[1] (Expected: ${expected} vs. Real: ${st}[0])\n</arg>
 <arg>append=${TRUE}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.871" level="TRACE">Arguments: [ 'Expression 100M + 10% completed with: 110.0M (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
-<msg timestamp="20200629 14:57:33.871" level="INFO">Set test message to:
+<msg timestamp="20200629 15:13:27.484" level="TRACE">Arguments: [ 'Expression 100M + 10% completed with: 110.0M (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
+<msg timestamp="20200629 15:13:27.484" level="INFO">Set test message to:
 Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 10M==9M completed with: True (Expected: PASS vs. Real: PASS)
  Expression 10M&gt;80m completed with: AssertionError (Expected: FAIL vs. Real: FAIL)
@@ -408,18 +408,18 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 100M+10% completed with: 110.0M (Expected: PASS vs. Real: PASS)
  Expression 100M + 10% completed with: 110.0M (Expected: PASS vs. Real: PASS)
 </msg>
-<msg timestamp="20200629 14:57:33.872" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.869" endtime="20200629 14:57:33.872"></status>
+<msg timestamp="20200629 15:13:27.484" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.482" endtime="20200629 15:13:27.485"></status>
 </kw>
-<msg timestamp="20200629 14:57:33.872" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.857" endtime="20200629 14:57:33.873"></status>
+<msg timestamp="20200629 15:13:27.485" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.470" endtime="20200629 15:13:27.485"></status>
 </kw>
 <kw name="executor">
 <arguments>
 <arg>PACKET_OPERATION</arg>
 <arg>100M - 10%</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.876" level="TRACE">Arguments: [ ${keyword}='PACKET_OPERATION' | ${expression}='100M - 10%' | ${expected}='PASS' | ${deviation}='' | ${reason}='' ]</msg>
+<msg timestamp="20200629 15:13:27.487" level="TRACE">Arguments: [ ${keyword}='PACKET_OPERATION' | ${expression}='100M - 10%' | ${expected}='PASS' | ${deviation}='' | ${reason}='' ]</msg>
 <kw name="Run Keyword And Ignore Error" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
 <arguments>
@@ -431,7 +431,7 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <assign>
 <var>${st}</var>
 </assign>
-<msg timestamp="20200629 14:57:33.879" level="TRACE">Arguments: [ 'PACKET_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
+<msg timestamp="20200629 15:13:27.488" level="TRACE">Arguments: [ 'PACKET_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
 <kw name="PACKET_OPERATION" library="robot_math.ROBOT_MATH">
 <doc>Provide logical and mathematical operation with packet</doc>
 <arguments>
@@ -439,17 +439,17 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>deviation_str=${deviation}</arg>
 <arg>reason=${reason}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.882" level="TRACE">Arguments: [ '100M - 10%' | deviation_str='' | reason='' ]</msg>
-<msg timestamp="20200629 14:57:33.883" level="TRACE">100M - 10%</msg>
-<msg timestamp="20200629 14:57:33.884" level="TRACE">100.0M sub +/-10.00%)</msg>
-<msg timestamp="20200629 14:57:33.884" level="DEBUG">Number 800000000 sub (+/-10.00%) = 720000000.0</msg>
-<msg timestamp="20200629 14:57:33.884" level="DEBUG">Result: 90.0M</msg>
-<msg timestamp="20200629 14:57:33.884" level="TRACE">Return: 90.0M</msg>
-<status status="PASS" starttime="20200629 14:57:33.880" endtime="20200629 14:57:33.885"></status>
+<msg timestamp="20200629 15:13:27.490" level="TRACE">Arguments: [ '100M - 10%' | deviation_str='' | reason='' ]</msg>
+<msg timestamp="20200629 15:13:27.490" level="TRACE">100M - 10%</msg>
+<msg timestamp="20200629 15:13:27.491" level="TRACE">100.0M sub +/-10.00%)</msg>
+<msg timestamp="20200629 15:13:27.491" level="DEBUG">Number 800000000 sub (+/-10.00%) = 720000000.0</msg>
+<msg timestamp="20200629 15:13:27.491" level="DEBUG">Result: 90.0M</msg>
+<msg timestamp="20200629 15:13:27.491" level="TRACE">Return: 90.0M</msg>
+<status status="PASS" starttime="20200629 15:13:27.489" endtime="20200629 15:13:27.491"></status>
 </kw>
-<msg timestamp="20200629 14:57:33.885" level="TRACE">Return: ('PASS', 90.0M)</msg>
-<msg timestamp="20200629 14:57:33.885" level="INFO">${st} = ('PASS', 90.0M)</msg>
-<status status="PASS" starttime="20200629 14:57:33.877" endtime="20200629 14:57:33.885"></status>
+<msg timestamp="20200629 15:13:27.492" level="TRACE">Return: ('PASS', 90.0M)</msg>
+<msg timestamp="20200629 15:13:27.492" level="INFO">${st} = ('PASS', 90.0M)</msg>
+<status status="PASS" starttime="20200629 15:13:27.488" endtime="20200629 15:13:27.492"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -458,9 +458,9 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>fail</arg>
 <arg>Expression ${expression} failed</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.886" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
-<msg timestamp="20200629 14:57:33.886" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.885" endtime="20200629 14:57:33.887"></status>
+<msg timestamp="20200629 15:13:27.493" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
+<msg timestamp="20200629 15:13:27.493" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.492" endtime="20200629 15:13:27.494"></status>
 </kw>
 <kw name="Set Test Message" library="BuiltIn">
 <doc>Sets message for the current test case.</doc>
@@ -468,8 +468,8 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>Expression ${expression} completed with: ${st}[1] (Expected: ${expected} vs. Real: ${st}[0])\n</arg>
 <arg>append=${TRUE}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.888" level="TRACE">Arguments: [ 'Expression 100M - 10% completed with: 90.0M (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
-<msg timestamp="20200629 14:57:33.888" level="INFO">Set test message to:
+<msg timestamp="20200629 15:13:27.495" level="TRACE">Arguments: [ 'Expression 100M - 10% completed with: 90.0M (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
+<msg timestamp="20200629 15:13:27.496" level="INFO">Set test message to:
 Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 10M==9M completed with: True (Expected: PASS vs. Real: PASS)
  Expression 10M&gt;80m completed with: AssertionError (Expected: FAIL vs. Real: FAIL)
@@ -478,18 +478,18 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 100M + 10% completed with: 110.0M (Expected: PASS vs. Real: PASS)
  Expression 100M - 10% completed with: 90.0M (Expected: PASS vs. Real: PASS)
 </msg>
-<msg timestamp="20200629 14:57:33.888" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.887" endtime="20200629 14:57:33.889"></status>
+<msg timestamp="20200629 15:13:27.496" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.494" endtime="20200629 15:13:27.497"></status>
 </kw>
-<msg timestamp="20200629 14:57:33.889" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.873" endtime="20200629 14:57:33.889"></status>
+<msg timestamp="20200629 15:13:27.497" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.486" endtime="20200629 15:13:27.498"></status>
 </kw>
 <kw name="executor">
 <arguments>
 <arg>PACKET_OPERATION</arg>
 <arg>10M+5M</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.892" level="TRACE">Arguments: [ ${keyword}='PACKET_OPERATION' | ${expression}='10M+5M' | ${expected}='PASS' | ${deviation}='' | ${reason}='' ]</msg>
+<msg timestamp="20200629 15:13:27.500" level="TRACE">Arguments: [ ${keyword}='PACKET_OPERATION' | ${expression}='10M+5M' | ${expected}='PASS' | ${deviation}='' | ${reason}='' ]</msg>
 <kw name="Run Keyword And Ignore Error" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
 <arguments>
@@ -501,7 +501,7 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <assign>
 <var>${st}</var>
 </assign>
-<msg timestamp="20200629 14:57:33.895" level="TRACE">Arguments: [ 'PACKET_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
+<msg timestamp="20200629 15:13:27.501" level="TRACE">Arguments: [ 'PACKET_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
 <kw name="PACKET_OPERATION" library="robot_math.ROBOT_MATH">
 <doc>Provide logical and mathematical operation with packet</doc>
 <arguments>
@@ -509,16 +509,16 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>deviation_str=${deviation}</arg>
 <arg>reason=${reason}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.904" level="TRACE">Arguments: [ '10M+5M' | deviation_str='' | reason='' ]</msg>
-<msg timestamp="20200629 14:57:33.905" level="TRACE">10M+5M</msg>
-<msg timestamp="20200629 14:57:33.905" level="TRACE">10.0M add 5.0M)</msg>
-<msg timestamp="20200629 14:57:33.906" level="DEBUG">Result: 15.0M</msg>
-<msg timestamp="20200629 14:57:33.906" level="TRACE">Return: 15.0M</msg>
-<status status="PASS" starttime="20200629 14:57:33.896" endtime="20200629 14:57:33.906"></status>
+<msg timestamp="20200629 15:13:27.503" level="TRACE">Arguments: [ '10M+5M' | deviation_str='' | reason='' ]</msg>
+<msg timestamp="20200629 15:13:27.503" level="TRACE">10M+5M</msg>
+<msg timestamp="20200629 15:13:27.503" level="TRACE">10.0M add 5.0M)</msg>
+<msg timestamp="20200629 15:13:27.504" level="DEBUG">Result: 15.0M</msg>
+<msg timestamp="20200629 15:13:27.504" level="TRACE">Return: 15.0M</msg>
+<status status="PASS" starttime="20200629 15:13:27.501" endtime="20200629 15:13:27.504"></status>
 </kw>
-<msg timestamp="20200629 14:57:33.907" level="TRACE">Return: ('PASS', 15.0M)</msg>
-<msg timestamp="20200629 14:57:33.907" level="INFO">${st} = ('PASS', 15.0M)</msg>
-<status status="PASS" starttime="20200629 14:57:33.894" endtime="20200629 14:57:33.907"></status>
+<msg timestamp="20200629 15:13:27.504" level="TRACE">Return: ('PASS', 15.0M)</msg>
+<msg timestamp="20200629 15:13:27.504" level="INFO">${st} = ('PASS', 15.0M)</msg>
+<status status="PASS" starttime="20200629 15:13:27.500" endtime="20200629 15:13:27.504"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -527,9 +527,9 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>fail</arg>
 <arg>Expression ${expression} failed</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.909" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
-<msg timestamp="20200629 14:57:33.909" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.908" endtime="20200629 14:57:33.910"></status>
+<msg timestamp="20200629 15:13:27.505" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
+<msg timestamp="20200629 15:13:27.506" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.505" endtime="20200629 15:13:27.506"></status>
 </kw>
 <kw name="Set Test Message" library="BuiltIn">
 <doc>Sets message for the current test case.</doc>
@@ -537,8 +537,8 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>Expression ${expression} completed with: ${st}[1] (Expected: ${expected} vs. Real: ${st}[0])\n</arg>
 <arg>append=${TRUE}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.913" level="TRACE">Arguments: [ 'Expression 10M+5M completed with: 15.0M (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
-<msg timestamp="20200629 14:57:33.914" level="INFO">Set test message to:
+<msg timestamp="20200629 15:13:27.507" level="TRACE">Arguments: [ 'Expression 10M+5M completed with: 15.0M (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
+<msg timestamp="20200629 15:13:27.508" level="INFO">Set test message to:
 Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 10M==9M completed with: True (Expected: PASS vs. Real: PASS)
  Expression 10M&gt;80m completed with: AssertionError (Expected: FAIL vs. Real: FAIL)
@@ -548,16 +548,16 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 100M - 10% completed with: 90.0M (Expected: PASS vs. Real: PASS)
  Expression 10M+5M completed with: 15.0M (Expected: PASS vs. Real: PASS)
 </msg>
-<msg timestamp="20200629 14:57:33.914" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.910" endtime="20200629 14:57:33.914"></status>
+<msg timestamp="20200629 15:13:27.508" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.506" endtime="20200629 15:13:27.508"></status>
 </kw>
-<msg timestamp="20200629 14:57:33.915" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.890" endtime="20200629 14:57:33.915"></status>
+<msg timestamp="20200629 15:13:27.508" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.498" endtime="20200629 15:13:27.508"></status>
 </kw>
 <tags>
 <tag>Packet</tag>
 </tags>
-<status status="PASS" starttime="20200629 14:57:33.788" endtime="20200629 14:57:33.917" critical="yes">Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
+<status status="PASS" starttime="20200629 15:13:27.359" endtime="20200629 15:13:27.509" critical="yes">Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 10M==9M completed with: True (Expected: PASS vs. Real: PASS)
  Expression 10M&gt;80m completed with: AssertionError (Expected: FAIL vs. Real: FAIL)
  Expression 10M&lt;80m completed with: My reason to fail (Expected: FAIL vs. Real: FAIL)
@@ -573,7 +573,7 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>TIME_OPERATION</arg>
 <arg>1h==60m</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.930" level="TRACE">Arguments: [ ${keyword}='TIME_OPERATION' | ${expression}='1h==60m' | ${expected}='PASS' | ${deviation}='' | ${reason}='' ]</msg>
+<msg timestamp="20200629 15:13:27.516" level="TRACE">Arguments: [ ${keyword}='TIME_OPERATION' | ${expression}='1h==60m' | ${expected}='PASS' | ${deviation}='' | ${reason}='' ]</msg>
 <kw name="Run Keyword And Ignore Error" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
 <arguments>
@@ -585,7 +585,7 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <assign>
 <var>${st}</var>
 </assign>
-<msg timestamp="20200629 14:57:33.932" level="TRACE">Arguments: [ 'TIME_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
+<msg timestamp="20200629 15:13:27.517" level="TRACE">Arguments: [ 'TIME_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
 <kw name="TIME_OPERATION" library="robot_math.ROBOT_MATH">
 <doc>    RF_MATH_OPERATION</doc>
 <arguments>
@@ -593,16 +593,16 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>deviation_str=${deviation}</arg>
 <arg>reason=${reason}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.935" level="TRACE">Arguments: [ '1h==60m' | deviation_str='' | reason='' ]</msg>
-<msg timestamp="20200629 14:57:33.936" level="TRACE">1h==60m</msg>
-<msg timestamp="20200629 14:57:33.937" level="TRACE">1h eq 1h)</msg>
-<msg timestamp="20200629 14:57:33.937" level="DEBUG">Result: True</msg>
-<msg timestamp="20200629 14:57:33.937" level="TRACE">Return: True</msg>
-<status status="PASS" starttime="20200629 14:57:33.933" endtime="20200629 14:57:33.938"></status>
+<msg timestamp="20200629 15:13:27.520" level="TRACE">Arguments: [ '1h==60m' | deviation_str='' | reason='' ]</msg>
+<msg timestamp="20200629 15:13:27.520" level="TRACE">1h==60m</msg>
+<msg timestamp="20200629 15:13:27.521" level="TRACE">1h eq 1h)</msg>
+<msg timestamp="20200629 15:13:27.522" level="DEBUG">Result: True</msg>
+<msg timestamp="20200629 15:13:27.522" level="TRACE">Return: True</msg>
+<status status="PASS" starttime="20200629 15:13:27.517" endtime="20200629 15:13:27.522"></status>
 </kw>
-<msg timestamp="20200629 14:57:33.938" level="TRACE">Return: ('PASS', True)</msg>
-<msg timestamp="20200629 14:57:33.938" level="INFO">${st} = ('PASS', True)</msg>
-<status status="PASS" starttime="20200629 14:57:33.931" endtime="20200629 14:57:33.938"></status>
+<msg timestamp="20200629 15:13:27.522" level="TRACE">Return: ('PASS', True)</msg>
+<msg timestamp="20200629 15:13:27.523" level="INFO">${st} = ('PASS', True)</msg>
+<status status="PASS" starttime="20200629 15:13:27.516" endtime="20200629 15:13:27.523"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -611,9 +611,9 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>fail</arg>
 <arg>Expression ${expression} failed</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.940" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
-<msg timestamp="20200629 14:57:33.941" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.939" endtime="20200629 14:57:33.941"></status>
+<msg timestamp="20200629 15:13:27.524" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
+<msg timestamp="20200629 15:13:27.524" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.523" endtime="20200629 15:13:27.525"></status>
 </kw>
 <kw name="Set Test Message" library="BuiltIn">
 <doc>Sets message for the current test case.</doc>
@@ -621,22 +621,22 @@ Expression 10M==80m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>Expression ${expression} completed with: ${st}[1] (Expected: ${expected} vs. Real: ${st}[0])\n</arg>
 <arg>append=${TRUE}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.948" level="TRACE">Arguments: [ 'Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
-<msg timestamp="20200629 14:57:33.949" level="INFO">Set test message to:
+<msg timestamp="20200629 15:13:27.527" level="TRACE">Arguments: [ 'Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
+<msg timestamp="20200629 15:13:27.528" level="INFO">Set test message to:
 Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 </msg>
-<msg timestamp="20200629 14:57:33.949" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.941" endtime="20200629 14:57:33.950"></status>
+<msg timestamp="20200629 15:13:27.528" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.525" endtime="20200629 15:13:27.528"></status>
 </kw>
-<msg timestamp="20200629 14:57:33.950" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.927" endtime="20200629 14:57:33.950"></status>
+<msg timestamp="20200629 15:13:27.529" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.514" endtime="20200629 15:13:27.530"></status>
 </kw>
 <kw name="executor">
 <arguments>
 <arg>TIME_OPERATION</arg>
 <arg>1h&gt;=60m</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.954" level="TRACE">Arguments: [ ${keyword}='TIME_OPERATION' | ${expression}='1h&gt;=60m' | ${expected}='PASS' | ${deviation}='' | ${reason}='' ]</msg>
+<msg timestamp="20200629 15:13:27.532" level="TRACE">Arguments: [ ${keyword}='TIME_OPERATION' | ${expression}='1h&gt;=60m' | ${expected}='PASS' | ${deviation}='' | ${reason}='' ]</msg>
 <kw name="Run Keyword And Ignore Error" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
 <arguments>
@@ -648,7 +648,7 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <assign>
 <var>${st}</var>
 </assign>
-<msg timestamp="20200629 14:57:33.956" level="TRACE">Arguments: [ 'TIME_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
+<msg timestamp="20200629 15:13:27.533" level="TRACE">Arguments: [ 'TIME_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
 <kw name="TIME_OPERATION" library="robot_math.ROBOT_MATH">
 <doc>    RF_MATH_OPERATION</doc>
 <arguments>
@@ -656,16 +656,16 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>deviation_str=${deviation}</arg>
 <arg>reason=${reason}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.959" level="TRACE">Arguments: [ '1h&gt;=60m' | deviation_str='' | reason='' ]</msg>
-<msg timestamp="20200629 14:57:33.960" level="TRACE">1h&gt;=60m</msg>
-<msg timestamp="20200629 14:57:33.961" level="TRACE">1h ge 1h)</msg>
-<msg timestamp="20200629 14:57:33.963" level="DEBUG">Result: True</msg>
-<msg timestamp="20200629 14:57:33.963" level="TRACE">Return: True</msg>
-<status status="PASS" starttime="20200629 14:57:33.957" endtime="20200629 14:57:33.963"></status>
+<msg timestamp="20200629 15:13:27.535" level="TRACE">Arguments: [ '1h&gt;=60m' | deviation_str='' | reason='' ]</msg>
+<msg timestamp="20200629 15:13:27.536" level="TRACE">1h&gt;=60m</msg>
+<msg timestamp="20200629 15:13:27.536" level="TRACE">1h ge 1h)</msg>
+<msg timestamp="20200629 15:13:27.536" level="DEBUG">Result: True</msg>
+<msg timestamp="20200629 15:13:27.536" level="TRACE">Return: True</msg>
+<status status="PASS" starttime="20200629 15:13:27.534" endtime="20200629 15:13:27.536"></status>
 </kw>
-<msg timestamp="20200629 14:57:33.963" level="TRACE">Return: ('PASS', True)</msg>
-<msg timestamp="20200629 14:57:33.964" level="INFO">${st} = ('PASS', True)</msg>
-<status status="PASS" starttime="20200629 14:57:33.956" endtime="20200629 14:57:33.964"></status>
+<msg timestamp="20200629 15:13:27.537" level="TRACE">Return: ('PASS', True)</msg>
+<msg timestamp="20200629 15:13:27.537" level="INFO">${st} = ('PASS', True)</msg>
+<status status="PASS" starttime="20200629 15:13:27.533" endtime="20200629 15:13:27.537"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -674,9 +674,9 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>fail</arg>
 <arg>Expression ${expression} failed</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.966" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
-<msg timestamp="20200629 14:57:33.966" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.965" endtime="20200629 14:57:33.966"></status>
+<msg timestamp="20200629 15:13:27.538" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
+<msg timestamp="20200629 15:13:27.538" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.538" endtime="20200629 15:13:27.539"></status>
 </kw>
 <kw name="Set Test Message" library="BuiltIn">
 <doc>Sets message for the current test case.</doc>
@@ -684,23 +684,23 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>Expression ${expression} completed with: ${st}[1] (Expected: ${expected} vs. Real: ${st}[0])\n</arg>
 <arg>append=${TRUE}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.969" level="TRACE">Arguments: [ 'Expression 1h&gt;=60m completed with: True (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
-<msg timestamp="20200629 14:57:33.970" level="INFO">Set test message to:
+<msg timestamp="20200629 15:13:27.541" level="TRACE">Arguments: [ 'Expression 1h&gt;=60m completed with: True (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
+<msg timestamp="20200629 15:13:27.541" level="INFO">Set test message to:
 Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h&gt;=60m completed with: True (Expected: PASS vs. Real: PASS)
 </msg>
-<msg timestamp="20200629 14:57:33.970" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.967" endtime="20200629 14:57:33.970"></status>
+<msg timestamp="20200629 15:13:27.541" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.539" endtime="20200629 15:13:27.542"></status>
 </kw>
-<msg timestamp="20200629 14:57:33.971" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.952" endtime="20200629 14:57:33.971"></status>
+<msg timestamp="20200629 15:13:27.542" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.531" endtime="20200629 15:13:27.543"></status>
 </kw>
 <kw name="executor">
 <arguments>
 <arg>TIME_OPERATION</arg>
 <arg>1h&lt;=60m</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.974" level="TRACE">Arguments: [ ${keyword}='TIME_OPERATION' | ${expression}='1h&lt;=60m' | ${expected}='PASS' | ${deviation}='' | ${reason}='' ]</msg>
+<msg timestamp="20200629 15:13:27.545" level="TRACE">Arguments: [ ${keyword}='TIME_OPERATION' | ${expression}='1h&lt;=60m' | ${expected}='PASS' | ${deviation}='' | ${reason}='' ]</msg>
 <kw name="Run Keyword And Ignore Error" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
 <arguments>
@@ -712,7 +712,7 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <assign>
 <var>${st}</var>
 </assign>
-<msg timestamp="20200629 14:57:33.977" level="TRACE">Arguments: [ 'TIME_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
+<msg timestamp="20200629 15:13:27.547" level="TRACE">Arguments: [ 'TIME_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
 <kw name="TIME_OPERATION" library="robot_math.ROBOT_MATH">
 <doc>    RF_MATH_OPERATION</doc>
 <arguments>
@@ -720,16 +720,16 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>deviation_str=${deviation}</arg>
 <arg>reason=${reason}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.982" level="TRACE">Arguments: [ '1h&lt;=60m' | deviation_str='' | reason='' ]</msg>
-<msg timestamp="20200629 14:57:33.982" level="TRACE">1h&lt;=60m</msg>
-<msg timestamp="20200629 14:57:33.983" level="TRACE">1h le 1h)</msg>
-<msg timestamp="20200629 14:57:33.983" level="DEBUG">Result: True</msg>
-<msg timestamp="20200629 14:57:33.983" level="TRACE">Return: True</msg>
-<status status="PASS" starttime="20200629 14:57:33.979" endtime="20200629 14:57:33.984"></status>
+<msg timestamp="20200629 15:13:27.549" level="TRACE">Arguments: [ '1h&lt;=60m' | deviation_str='' | reason='' ]</msg>
+<msg timestamp="20200629 15:13:27.549" level="TRACE">1h&lt;=60m</msg>
+<msg timestamp="20200629 15:13:27.550" level="TRACE">1h le 1h)</msg>
+<msg timestamp="20200629 15:13:27.550" level="DEBUG">Result: True</msg>
+<msg timestamp="20200629 15:13:27.550" level="TRACE">Return: True</msg>
+<status status="PASS" starttime="20200629 15:13:27.548" endtime="20200629 15:13:27.550"></status>
 </kw>
-<msg timestamp="20200629 14:57:33.984" level="TRACE">Return: ('PASS', True)</msg>
-<msg timestamp="20200629 14:57:33.984" level="INFO">${st} = ('PASS', True)</msg>
-<status status="PASS" starttime="20200629 14:57:33.976" endtime="20200629 14:57:33.985"></status>
+<msg timestamp="20200629 15:13:27.550" level="TRACE">Return: ('PASS', True)</msg>
+<msg timestamp="20200629 15:13:27.551" level="INFO">${st} = ('PASS', True)</msg>
+<status status="PASS" starttime="20200629 15:13:27.546" endtime="20200629 15:13:27.551"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -738,9 +738,9 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>fail</arg>
 <arg>Expression ${expression} failed</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.986" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
-<msg timestamp="20200629 14:57:33.987" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.985" endtime="20200629 14:57:33.987"></status>
+<msg timestamp="20200629 15:13:27.552" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
+<msg timestamp="20200629 15:13:27.552" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.551" endtime="20200629 15:13:27.552"></status>
 </kw>
 <kw name="Set Test Message" library="BuiltIn">
 <doc>Sets message for the current test case.</doc>
@@ -748,17 +748,17 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>Expression ${expression} completed with: ${st}[1] (Expected: ${expected} vs. Real: ${st}[0])\n</arg>
 <arg>append=${TRUE}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.989" level="TRACE">Arguments: [ 'Expression 1h&lt;=60m completed with: True (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
-<msg timestamp="20200629 14:57:33.990" level="INFO">Set test message to:
+<msg timestamp="20200629 15:13:27.554" level="TRACE">Arguments: [ 'Expression 1h&lt;=60m completed with: True (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
+<msg timestamp="20200629 15:13:27.555" level="INFO">Set test message to:
 Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h&gt;=60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h&lt;=60m completed with: True (Expected: PASS vs. Real: PASS)
 </msg>
-<msg timestamp="20200629 14:57:33.990" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.988" endtime="20200629 14:57:33.990"></status>
+<msg timestamp="20200629 15:13:27.555" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.553" endtime="20200629 15:13:27.555"></status>
 </kw>
-<msg timestamp="20200629 14:57:33.991" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.972" endtime="20200629 14:57:33.991"></status>
+<msg timestamp="20200629 15:13:27.556" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.543" endtime="20200629 15:13:27.556"></status>
 </kw>
 <kw name="executor">
 <arguments>
@@ -766,7 +766,7 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>1h==59m</arg>
 <arg>expected=FAIL</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.993" level="TRACE">Arguments: [ ${keyword}='TIME_OPERATION' | ${expression}='1h==59m' | ${expected}='FAIL' | ${deviation}='' | ${reason}='' ]</msg>
+<msg timestamp="20200629 15:13:27.558" level="TRACE">Arguments: [ ${keyword}='TIME_OPERATION' | ${expression}='1h==59m' | ${expected}='FAIL' | ${deviation}='' | ${reason}='' ]</msg>
 <kw name="Run Keyword And Ignore Error" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
 <arguments>
@@ -778,7 +778,7 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <assign>
 <var>${st}</var>
 </assign>
-<msg timestamp="20200629 14:57:33.995" level="TRACE">Arguments: [ 'TIME_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
+<msg timestamp="20200629 15:13:27.560" level="TRACE">Arguments: [ 'TIME_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
 <kw name="TIME_OPERATION" library="robot_math.ROBOT_MATH">
 <doc>    RF_MATH_OPERATION</doc>
 <arguments>
@@ -786,21 +786,21 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>deviation_str=${deviation}</arg>
 <arg>reason=${reason}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:33.997" level="TRACE">Arguments: [ '1h==59m' | deviation_str='' | reason='' ]</msg>
-<msg timestamp="20200629 14:57:33.997" level="TRACE">1h==59m</msg>
-<msg timestamp="20200629 14:57:33.998" level="TRACE">1h eq 59m)</msg>
-<msg timestamp="20200629 14:57:33.998" level="DEBUG">Result: False</msg>
-<msg timestamp="20200629 14:57:33.998" level="FAIL">AssertionError</msg>
-<msg timestamp="20200629 14:57:33.999" level="DEBUG">Traceback (most recent call last):
+<msg timestamp="20200629 15:13:27.562" level="TRACE">Arguments: [ '1h==59m' | deviation_str='' | reason='' ]</msg>
+<msg timestamp="20200629 15:13:27.562" level="TRACE">1h==59m</msg>
+<msg timestamp="20200629 15:13:27.563" level="TRACE">1h eq 59m)</msg>
+<msg timestamp="20200629 15:13:27.564" level="DEBUG">Result: False</msg>
+<msg timestamp="20200629 15:13:27.564" level="FAIL">AssertionError</msg>
+<msg timestamp="20200629 15:13:27.565" level="DEBUG">Traceback (most recent call last):
   File "C:\git\robotframework-calculator\robot_math\ROBOT_MATH.py", line 195, in time_operation
     raise e
   File "C:\git\robotframework-calculator\robot_math\ROBOT_MATH.py", line 192, in time_operation
     assert result is not False, f"{operand1} {operation.__name__} {operand2} False" if reason is None else reason</msg>
-<status status="FAIL" starttime="20200629 14:57:33.996" endtime="20200629 14:57:33.999"></status>
+<status status="FAIL" starttime="20200629 15:13:27.561" endtime="20200629 15:13:27.565"></status>
 </kw>
-<msg timestamp="20200629 14:57:33.999" level="TRACE">Return: ('FAIL', 'AssertionError')</msg>
-<msg timestamp="20200629 14:57:33.999" level="INFO">${st} = ('FAIL', 'AssertionError')</msg>
-<status status="PASS" starttime="20200629 14:57:33.994" endtime="20200629 14:57:33.999"></status>
+<msg timestamp="20200629 15:13:27.565" level="TRACE">Return: ('FAIL', 'AssertionError')</msg>
+<msg timestamp="20200629 15:13:27.565" level="INFO">${st} = ('FAIL', 'AssertionError')</msg>
+<status status="PASS" starttime="20200629 15:13:27.559" endtime="20200629 15:13:27.565"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -809,9 +809,9 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>fail</arg>
 <arg>Expression ${expression} failed</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.000" level="TRACE">Arguments: [ "'FAIL' != 'FAIL'" | 'fail' | 'Expression ${expression} failed' ]</msg>
-<msg timestamp="20200629 14:57:34.000" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.999" endtime="20200629 14:57:34.000"></status>
+<msg timestamp="20200629 15:13:27.566" level="TRACE">Arguments: [ "'FAIL' != 'FAIL'" | 'fail' | 'Expression ${expression} failed' ]</msg>
+<msg timestamp="20200629 15:13:27.566" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.565" endtime="20200629 15:13:27.566"></status>
 </kw>
 <kw name="Set Test Message" library="BuiltIn">
 <doc>Sets message for the current test case.</doc>
@@ -819,18 +819,18 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>Expression ${expression} completed with: ${st}[1] (Expected: ${expected} vs. Real: ${st}[0])\n</arg>
 <arg>append=${TRUE}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.002" level="TRACE">Arguments: [ 'Expression 1h==59m completed with: AssertionError (Expected: FAIL vs. Real: FAIL)\n' | append=True ]</msg>
-<msg timestamp="20200629 14:57:34.002" level="INFO">Set test message to:
+<msg timestamp="20200629 15:13:27.568" level="TRACE">Arguments: [ 'Expression 1h==59m completed with: AssertionError (Expected: FAIL vs. Real: FAIL)\n' | append=True ]</msg>
+<msg timestamp="20200629 15:13:27.568" level="INFO">Set test message to:
 Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h&gt;=60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h&lt;=60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h==59m completed with: AssertionError (Expected: FAIL vs. Real: FAIL)
 </msg>
-<msg timestamp="20200629 14:57:34.002" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:34.001" endtime="20200629 14:57:34.002"></status>
+<msg timestamp="20200629 15:13:27.568" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.567" endtime="20200629 15:13:27.569"></status>
 </kw>
-<msg timestamp="20200629 14:57:34.002" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:33.992" endtime="20200629 14:57:34.002"></status>
+<msg timestamp="20200629 15:13:27.569" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.557" endtime="20200629 15:13:27.569"></status>
 </kw>
 <kw name="executor">
 <arguments>
@@ -838,7 +838,7 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>1h==54m</arg>
 <arg>deviation=10%</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.004" level="TRACE">Arguments: [ ${keyword}='TIME_OPERATION' | ${expression}='1h==54m' | ${expected}='PASS' | ${deviation}='10%' | ${reason}='' ]</msg>
+<msg timestamp="20200629 15:13:27.571" level="TRACE">Arguments: [ ${keyword}='TIME_OPERATION' | ${expression}='1h==54m' | ${expected}='PASS' | ${deviation}='10%' | ${reason}='' ]</msg>
 <kw name="Run Keyword And Ignore Error" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
 <arguments>
@@ -850,7 +850,7 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <assign>
 <var>${st}</var>
 </assign>
-<msg timestamp="20200629 14:57:34.005" level="TRACE">Arguments: [ 'TIME_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
+<msg timestamp="20200629 15:13:27.573" level="TRACE">Arguments: [ 'TIME_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
 <kw name="TIME_OPERATION" library="robot_math.ROBOT_MATH">
 <doc>    RF_MATH_OPERATION</doc>
 <arguments>
@@ -858,18 +858,18 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>deviation_str=${deviation}</arg>
 <arg>reason=${reason}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.007" level="TRACE">Arguments: [ '1h==54m' | deviation_str='10%' | reason='' ]</msg>
-<msg timestamp="20200629 14:57:34.007" level="TRACE">1h==54m, 10%</msg>
-<msg timestamp="20200629 14:57:34.007" level="TRACE">1h eq 54m (Deviation: +/-10.00%)</msg>
-<msg timestamp="20200629 14:57:34.008" level="DEBUG">Number 3600 sub (+/-10.00%) = 3240.0</msg>
-<msg timestamp="20200629 14:57:34.008" level="DEBUG">Number 3600 add (+/-10.00%) = 3960.0000000000005</msg>
-<msg timestamp="20200629 14:57:34.008" level="DEBUG">Result: True</msg>
-<msg timestamp="20200629 14:57:34.008" level="TRACE">Return: True</msg>
-<status status="PASS" starttime="20200629 14:57:34.006" endtime="20200629 14:57:34.008"></status>
+<msg timestamp="20200629 15:13:27.574" level="TRACE">Arguments: [ '1h==54m' | deviation_str='10%' | reason='' ]</msg>
+<msg timestamp="20200629 15:13:27.575" level="TRACE">1h==54m, 10%</msg>
+<msg timestamp="20200629 15:13:27.575" level="TRACE">1h eq 54m (Deviation: +/-10.00%)</msg>
+<msg timestamp="20200629 15:13:27.575" level="DEBUG">Number 3600 sub (+/-10.00%) = 3240.0</msg>
+<msg timestamp="20200629 15:13:27.576" level="DEBUG">Number 3600 add (+/-10.00%) = 3960.0000000000005</msg>
+<msg timestamp="20200629 15:13:27.576" level="DEBUG">Result: True</msg>
+<msg timestamp="20200629 15:13:27.576" level="TRACE">Return: True</msg>
+<status status="PASS" starttime="20200629 15:13:27.573" endtime="20200629 15:13:27.576"></status>
 </kw>
-<msg timestamp="20200629 14:57:34.009" level="TRACE">Return: ('PASS', True)</msg>
-<msg timestamp="20200629 14:57:34.009" level="INFO">${st} = ('PASS', True)</msg>
-<status status="PASS" starttime="20200629 14:57:34.005" endtime="20200629 14:57:34.009"></status>
+<msg timestamp="20200629 15:13:27.576" level="TRACE">Return: ('PASS', True)</msg>
+<msg timestamp="20200629 15:13:27.576" level="INFO">${st} = ('PASS', True)</msg>
+<status status="PASS" starttime="20200629 15:13:27.572" endtime="20200629 15:13:27.576"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -878,9 +878,9 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>fail</arg>
 <arg>Expression ${expression} failed</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.010" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
-<msg timestamp="20200629 14:57:34.010" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:34.009" endtime="20200629 14:57:34.010"></status>
+<msg timestamp="20200629 15:13:27.577" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
+<msg timestamp="20200629 15:13:27.578" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.577" endtime="20200629 15:13:27.578"></status>
 </kw>
 <kw name="Set Test Message" library="BuiltIn">
 <doc>Sets message for the current test case.</doc>
@@ -888,19 +888,19 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>Expression ${expression} completed with: ${st}[1] (Expected: ${expected} vs. Real: ${st}[0])\n</arg>
 <arg>append=${TRUE}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.012" level="TRACE">Arguments: [ 'Expression 1h==54m completed with: True (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
-<msg timestamp="20200629 14:57:34.013" level="INFO">Set test message to:
+<msg timestamp="20200629 15:13:27.580" level="TRACE">Arguments: [ 'Expression 1h==54m completed with: True (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
+<msg timestamp="20200629 15:13:27.581" level="INFO">Set test message to:
 Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h&gt;=60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h&lt;=60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h==59m completed with: AssertionError (Expected: FAIL vs. Real: FAIL)
  Expression 1h==54m completed with: True (Expected: PASS vs. Real: PASS)
 </msg>
-<msg timestamp="20200629 14:57:34.013" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:34.010" endtime="20200629 14:57:34.013"></status>
+<msg timestamp="20200629 15:13:27.581" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.578" endtime="20200629 15:13:27.581"></status>
 </kw>
-<msg timestamp="20200629 14:57:34.013" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:34.003" endtime="20200629 14:57:34.014"></status>
+<msg timestamp="20200629 15:13:27.582" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.570" endtime="20200629 15:13:27.582"></status>
 </kw>
 <kw name="executor">
 <arguments>
@@ -908,7 +908,7 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>1h==54m</arg>
 <arg>deviation=0.1</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.016" level="TRACE">Arguments: [ ${keyword}='TIME_OPERATION' | ${expression}='1h==54m' | ${expected}='PASS' | ${deviation}='0.1' | ${reason}='' ]</msg>
+<msg timestamp="20200629 15:13:27.584" level="TRACE">Arguments: [ ${keyword}='TIME_OPERATION' | ${expression}='1h==54m' | ${expected}='PASS' | ${deviation}='0.1' | ${reason}='' ]</msg>
 <kw name="Run Keyword And Ignore Error" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
 <arguments>
@@ -920,7 +920,7 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <assign>
 <var>${st}</var>
 </assign>
-<msg timestamp="20200629 14:57:34.017" level="TRACE">Arguments: [ 'TIME_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
+<msg timestamp="20200629 15:13:27.585" level="TRACE">Arguments: [ 'TIME_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
 <kw name="TIME_OPERATION" library="robot_math.ROBOT_MATH">
 <doc>    RF_MATH_OPERATION</doc>
 <arguments>
@@ -928,18 +928,18 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>deviation_str=${deviation}</arg>
 <arg>reason=${reason}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.018" level="TRACE">Arguments: [ '1h==54m' | deviation_str='0.1' | reason='' ]</msg>
-<msg timestamp="20200629 14:57:34.018" level="TRACE">1h==54m, 0.1</msg>
-<msg timestamp="20200629 14:57:34.019" level="TRACE">1h eq 54m (Deviation: +/-10.00%)</msg>
-<msg timestamp="20200629 14:57:34.019" level="DEBUG">Number 3600 sub (+/-10.00%) = 3240.0</msg>
-<msg timestamp="20200629 14:57:34.019" level="DEBUG">Number 3600 add (+/-10.00%) = 3960.0000000000005</msg>
-<msg timestamp="20200629 14:57:34.019" level="DEBUG">Result: True</msg>
-<msg timestamp="20200629 14:57:34.020" level="TRACE">Return: True</msg>
-<status status="PASS" starttime="20200629 14:57:34.017" endtime="20200629 14:57:34.020"></status>
+<msg timestamp="20200629 15:13:27.587" level="TRACE">Arguments: [ '1h==54m' | deviation_str='0.1' | reason='' ]</msg>
+<msg timestamp="20200629 15:13:27.587" level="TRACE">1h==54m, 0.1</msg>
+<msg timestamp="20200629 15:13:27.588" level="TRACE">1h eq 54m (Deviation: +/-10.00%)</msg>
+<msg timestamp="20200629 15:13:27.588" level="DEBUG">Number 3600 sub (+/-10.00%) = 3240.0</msg>
+<msg timestamp="20200629 15:13:27.588" level="DEBUG">Number 3600 add (+/-10.00%) = 3960.0000000000005</msg>
+<msg timestamp="20200629 15:13:27.588" level="DEBUG">Result: True</msg>
+<msg timestamp="20200629 15:13:27.588" level="TRACE">Return: True</msg>
+<status status="PASS" starttime="20200629 15:13:27.586" endtime="20200629 15:13:27.589"></status>
 </kw>
-<msg timestamp="20200629 14:57:34.020" level="TRACE">Return: ('PASS', True)</msg>
-<msg timestamp="20200629 14:57:34.020" level="INFO">${st} = ('PASS', True)</msg>
-<status status="PASS" starttime="20200629 14:57:34.016" endtime="20200629 14:57:34.020"></status>
+<msg timestamp="20200629 15:13:27.589" level="TRACE">Return: ('PASS', True)</msg>
+<msg timestamp="20200629 15:13:27.589" level="INFO">${st} = ('PASS', True)</msg>
+<status status="PASS" starttime="20200629 15:13:27.585" endtime="20200629 15:13:27.589"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -948,9 +948,9 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>fail</arg>
 <arg>Expression ${expression} failed</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.021" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
-<msg timestamp="20200629 14:57:34.021" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:34.020" endtime="20200629 14:57:34.021"></status>
+<msg timestamp="20200629 15:13:27.590" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
+<msg timestamp="20200629 15:13:27.591" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.589" endtime="20200629 15:13:27.591"></status>
 </kw>
 <kw name="Set Test Message" library="BuiltIn">
 <doc>Sets message for the current test case.</doc>
@@ -958,8 +958,8 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>Expression ${expression} completed with: ${st}[1] (Expected: ${expected} vs. Real: ${st}[0])\n</arg>
 <arg>append=${TRUE}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.022" level="TRACE">Arguments: [ 'Expression 1h==54m completed with: True (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
-<msg timestamp="20200629 14:57:34.023" level="INFO">Set test message to:
+<msg timestamp="20200629 15:13:27.593" level="TRACE">Arguments: [ 'Expression 1h==54m completed with: True (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
+<msg timestamp="20200629 15:13:27.594" level="INFO">Set test message to:
 Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h&gt;=60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h&lt;=60m completed with: True (Expected: PASS vs. Real: PASS)
@@ -967,11 +967,11 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h==54m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h==54m completed with: True (Expected: PASS vs. Real: PASS)
 </msg>
-<msg timestamp="20200629 14:57:34.023" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:34.021" endtime="20200629 14:57:34.023"></status>
+<msg timestamp="20200629 15:13:27.594" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.591" endtime="20200629 15:13:27.594"></status>
 </kw>
-<msg timestamp="20200629 14:57:34.023" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:34.014" endtime="20200629 14:57:34.023"></status>
+<msg timestamp="20200629 15:13:27.595" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.583" endtime="20200629 15:13:27.595"></status>
 </kw>
 <kw name="executor">
 <arguments>
@@ -981,7 +981,7 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>reason=My reason</arg>
 <arg>expected=FAIL</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.025" level="TRACE">Arguments: [ ${keyword}='TIME_OPERATION' | ${expression}='1h==53m' | ${expected}='FAIL' | ${deviation}='10%' | ${reason}='My reason' ]</msg>
+<msg timestamp="20200629 15:13:27.598" level="TRACE">Arguments: [ ${keyword}='TIME_OPERATION' | ${expression}='1h==53m' | ${expected}='FAIL' | ${deviation}='10%' | ${reason}='My reason' ]</msg>
 <kw name="Run Keyword And Ignore Error" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
 <arguments>
@@ -993,7 +993,7 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <assign>
 <var>${st}</var>
 </assign>
-<msg timestamp="20200629 14:57:34.026" level="TRACE">Arguments: [ 'TIME_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
+<msg timestamp="20200629 15:13:27.600" level="TRACE">Arguments: [ 'TIME_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
 <kw name="TIME_OPERATION" library="robot_math.ROBOT_MATH">
 <doc>    RF_MATH_OPERATION</doc>
 <arguments>
@@ -1001,22 +1001,22 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>deviation_str=${deviation}</arg>
 <arg>reason=${reason}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.029" level="TRACE">Arguments: [ '1h==53m' | deviation_str='10%' | reason='My reason' ]</msg>
-<msg timestamp="20200629 14:57:34.029" level="TRACE">1h==53m, 10%</msg>
-<msg timestamp="20200629 14:57:34.029" level="TRACE">1h eq 53m (Deviation: +/-10.00%)</msg>
-<msg timestamp="20200629 14:57:34.029" level="DEBUG">Number 3600 sub (+/-10.00%) = 3240.0</msg>
-<msg timestamp="20200629 14:57:34.030" level="DEBUG">Result: False</msg>
-<msg timestamp="20200629 14:57:34.030" level="FAIL">My reason</msg>
-<msg timestamp="20200629 14:57:34.030" level="DEBUG">Traceback (most recent call last):
+<msg timestamp="20200629 15:13:27.601" level="TRACE">Arguments: [ '1h==53m' | deviation_str='10%' | reason='My reason' ]</msg>
+<msg timestamp="20200629 15:13:27.601" level="TRACE">1h==53m, 10%</msg>
+<msg timestamp="20200629 15:13:27.602" level="TRACE">1h eq 53m (Deviation: +/-10.00%)</msg>
+<msg timestamp="20200629 15:13:27.602" level="DEBUG">Number 3600 sub (+/-10.00%) = 3240.0</msg>
+<msg timestamp="20200629 15:13:27.602" level="DEBUG">Result: False</msg>
+<msg timestamp="20200629 15:13:27.603" level="FAIL">My reason</msg>
+<msg timestamp="20200629 15:13:27.603" level="DEBUG">Traceback (most recent call last):
   File "C:\git\robotframework-calculator\robot_math\ROBOT_MATH.py", line 195, in time_operation
     raise e
   File "C:\git\robotframework-calculator\robot_math\ROBOT_MATH.py", line 192, in time_operation
     assert result is not False, f"{operand1} {operation.__name__} {operand2} False" if reason is None else reason</msg>
-<status status="FAIL" starttime="20200629 14:57:34.027" endtime="20200629 14:57:34.031"></status>
+<status status="FAIL" starttime="20200629 15:13:27.600" endtime="20200629 15:13:27.603"></status>
 </kw>
-<msg timestamp="20200629 14:57:34.031" level="TRACE">Return: ('FAIL', 'My reason')</msg>
-<msg timestamp="20200629 14:57:34.031" level="INFO">${st} = ('FAIL', 'My reason')</msg>
-<status status="PASS" starttime="20200629 14:57:34.026" endtime="20200629 14:57:34.031"></status>
+<msg timestamp="20200629 15:13:27.603" level="TRACE">Return: ('FAIL', 'My reason')</msg>
+<msg timestamp="20200629 15:13:27.603" level="INFO">${st} = ('FAIL', 'My reason')</msg>
+<status status="PASS" starttime="20200629 15:13:27.599" endtime="20200629 15:13:27.604"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -1025,9 +1025,9 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>fail</arg>
 <arg>Expression ${expression} failed</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.032" level="TRACE">Arguments: [ "'FAIL' != 'FAIL'" | 'fail' | 'Expression ${expression} failed' ]</msg>
-<msg timestamp="20200629 14:57:34.032" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:34.031" endtime="20200629 14:57:34.032"></status>
+<msg timestamp="20200629 15:13:27.604" level="TRACE">Arguments: [ "'FAIL' != 'FAIL'" | 'fail' | 'Expression ${expression} failed' ]</msg>
+<msg timestamp="20200629 15:13:27.605" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.604" endtime="20200629 15:13:27.605"></status>
 </kw>
 <kw name="Set Test Message" library="BuiltIn">
 <doc>Sets message for the current test case.</doc>
@@ -1035,8 +1035,8 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>Expression ${expression} completed with: ${st}[1] (Expected: ${expected} vs. Real: ${st}[0])\n</arg>
 <arg>append=${TRUE}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.034" level="TRACE">Arguments: [ 'Expression 1h==53m completed with: My reason (Expected: FAIL vs. Real: FAIL)\n' | append=True ]</msg>
-<msg timestamp="20200629 14:57:34.034" level="INFO">Set test message to:
+<msg timestamp="20200629 15:13:27.606" level="TRACE">Arguments: [ 'Expression 1h==53m completed with: My reason (Expected: FAIL vs. Real: FAIL)\n' | append=True ]</msg>
+<msg timestamp="20200629 15:13:27.606" level="INFO">Set test message to:
 Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h&gt;=60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h&lt;=60m completed with: True (Expected: PASS vs. Real: PASS)
@@ -1045,18 +1045,18 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h==54m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h==53m completed with: My reason (Expected: FAIL vs. Real: FAIL)
 </msg>
-<msg timestamp="20200629 14:57:34.034" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:34.033" endtime="20200629 14:57:34.034"></status>
+<msg timestamp="20200629 15:13:27.606" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.605" endtime="20200629 15:13:27.607"></status>
 </kw>
-<msg timestamp="20200629 14:57:34.034" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:34.024" endtime="20200629 14:57:34.035"></status>
+<msg timestamp="20200629 15:13:27.607" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.597" endtime="20200629 15:13:27.607"></status>
 </kw>
 <kw name="executor">
 <arguments>
 <arg>TIME_OPERATION</arg>
 <arg>1h&gt;59m</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.036" level="TRACE">Arguments: [ ${keyword}='TIME_OPERATION' | ${expression}='1h&gt;59m' | ${expected}='PASS' | ${deviation}='' | ${reason}='' ]</msg>
+<msg timestamp="20200629 15:13:27.609" level="TRACE">Arguments: [ ${keyword}='TIME_OPERATION' | ${expression}='1h&gt;59m' | ${expected}='PASS' | ${deviation}='' | ${reason}='' ]</msg>
 <kw name="Run Keyword And Ignore Error" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
 <arguments>
@@ -1068,7 +1068,7 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <assign>
 <var>${st}</var>
 </assign>
-<msg timestamp="20200629 14:57:34.038" level="TRACE">Arguments: [ 'TIME_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
+<msg timestamp="20200629 15:13:27.610" level="TRACE">Arguments: [ 'TIME_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
 <kw name="TIME_OPERATION" library="robot_math.ROBOT_MATH">
 <doc>    RF_MATH_OPERATION</doc>
 <arguments>
@@ -1076,16 +1076,16 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>deviation_str=${deviation}</arg>
 <arg>reason=${reason}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.039" level="TRACE">Arguments: [ '1h&gt;59m' | deviation_str='' | reason='' ]</msg>
-<msg timestamp="20200629 14:57:34.040" level="TRACE">1h&gt;59m</msg>
-<msg timestamp="20200629 14:57:34.040" level="TRACE">1h gt 59m)</msg>
-<msg timestamp="20200629 14:57:34.040" level="DEBUG">Result: True</msg>
-<msg timestamp="20200629 14:57:34.040" level="TRACE">Return: True</msg>
-<status status="PASS" starttime="20200629 14:57:34.038" endtime="20200629 14:57:34.040"></status>
+<msg timestamp="20200629 15:13:27.612" level="TRACE">Arguments: [ '1h&gt;59m' | deviation_str='' | reason='' ]</msg>
+<msg timestamp="20200629 15:13:27.612" level="TRACE">1h&gt;59m</msg>
+<msg timestamp="20200629 15:13:27.613" level="TRACE">1h gt 59m)</msg>
+<msg timestamp="20200629 15:13:27.613" level="DEBUG">Result: True</msg>
+<msg timestamp="20200629 15:13:27.613" level="TRACE">Return: True</msg>
+<status status="PASS" starttime="20200629 15:13:27.611" endtime="20200629 15:13:27.614"></status>
 </kw>
-<msg timestamp="20200629 14:57:34.040" level="TRACE">Return: ('PASS', True)</msg>
-<msg timestamp="20200629 14:57:34.041" level="INFO">${st} = ('PASS', True)</msg>
-<status status="PASS" starttime="20200629 14:57:34.037" endtime="20200629 14:57:34.041"></status>
+<msg timestamp="20200629 15:13:27.614" level="TRACE">Return: ('PASS', True)</msg>
+<msg timestamp="20200629 15:13:27.614" level="INFO">${st} = ('PASS', True)</msg>
+<status status="PASS" starttime="20200629 15:13:27.610" endtime="20200629 15:13:27.614"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -1094,9 +1094,9 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>fail</arg>
 <arg>Expression ${expression} failed</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.042" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
-<msg timestamp="20200629 14:57:34.042" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:34.041" endtime="20200629 14:57:34.042"></status>
+<msg timestamp="20200629 15:13:27.615" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
+<msg timestamp="20200629 15:13:27.616" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.615" endtime="20200629 15:13:27.616"></status>
 </kw>
 <kw name="Set Test Message" library="BuiltIn">
 <doc>Sets message for the current test case.</doc>
@@ -1104,8 +1104,8 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>Expression ${expression} completed with: ${st}[1] (Expected: ${expected} vs. Real: ${st}[0])\n</arg>
 <arg>append=${TRUE}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.044" level="TRACE">Arguments: [ 'Expression 1h&gt;59m completed with: True (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
-<msg timestamp="20200629 14:57:34.044" level="INFO">Set test message to:
+<msg timestamp="20200629 15:13:27.618" level="TRACE">Arguments: [ 'Expression 1h&gt;59m completed with: True (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
+<msg timestamp="20200629 15:13:27.618" level="INFO">Set test message to:
 Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h&gt;=60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h&lt;=60m completed with: True (Expected: PASS vs. Real: PASS)
@@ -1115,18 +1115,18 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h==53m completed with: My reason (Expected: FAIL vs. Real: FAIL)
  Expression 1h&gt;59m completed with: True (Expected: PASS vs. Real: PASS)
 </msg>
-<msg timestamp="20200629 14:57:34.044" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:34.043" endtime="20200629 14:57:34.044"></status>
+<msg timestamp="20200629 15:13:27.618" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.616" endtime="20200629 15:13:27.618"></status>
 </kw>
-<msg timestamp="20200629 14:57:34.045" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:34.035" endtime="20200629 14:57:34.045"></status>
+<msg timestamp="20200629 15:13:27.619" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.608" endtime="20200629 15:13:27.619"></status>
 </kw>
 <kw name="executor">
 <arguments>
 <arg>TIME_OPERATION</arg>
 <arg>59m&lt;1h</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.047" level="TRACE">Arguments: [ ${keyword}='TIME_OPERATION' | ${expression}='59m&lt;1h' | ${expected}='PASS' | ${deviation}='' | ${reason}='' ]</msg>
+<msg timestamp="20200629 15:13:27.621" level="TRACE">Arguments: [ ${keyword}='TIME_OPERATION' | ${expression}='59m&lt;1h' | ${expected}='PASS' | ${deviation}='' | ${reason}='' ]</msg>
 <kw name="Run Keyword And Ignore Error" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
 <arguments>
@@ -1138,7 +1138,7 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <assign>
 <var>${st}</var>
 </assign>
-<msg timestamp="20200629 14:57:34.049" level="TRACE">Arguments: [ 'TIME_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
+<msg timestamp="20200629 15:13:27.622" level="TRACE">Arguments: [ 'TIME_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
 <kw name="TIME_OPERATION" library="robot_math.ROBOT_MATH">
 <doc>    RF_MATH_OPERATION</doc>
 <arguments>
@@ -1146,16 +1146,16 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>deviation_str=${deviation}</arg>
 <arg>reason=${reason}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.051" level="TRACE">Arguments: [ '59m&lt;1h' | deviation_str='' | reason='' ]</msg>
-<msg timestamp="20200629 14:57:34.052" level="TRACE">59m&lt;1h</msg>
-<msg timestamp="20200629 14:57:34.052" level="TRACE">59m lt 1h)</msg>
-<msg timestamp="20200629 14:57:34.053" level="DEBUG">Result: True</msg>
-<msg timestamp="20200629 14:57:34.053" level="TRACE">Return: True</msg>
-<status status="PASS" starttime="20200629 14:57:34.049" endtime="20200629 14:57:34.053"></status>
+<msg timestamp="20200629 15:13:27.623" level="TRACE">Arguments: [ '59m&lt;1h' | deviation_str='' | reason='' ]</msg>
+<msg timestamp="20200629 15:13:27.624" level="TRACE">59m&lt;1h</msg>
+<msg timestamp="20200629 15:13:27.624" level="TRACE">59m lt 1h)</msg>
+<msg timestamp="20200629 15:13:27.624" level="DEBUG">Result: True</msg>
+<msg timestamp="20200629 15:13:27.624" level="TRACE">Return: True</msg>
+<status status="PASS" starttime="20200629 15:13:27.622" endtime="20200629 15:13:27.624"></status>
 </kw>
-<msg timestamp="20200629 14:57:34.053" level="TRACE">Return: ('PASS', True)</msg>
-<msg timestamp="20200629 14:57:34.053" level="INFO">${st} = ('PASS', True)</msg>
-<status status="PASS" starttime="20200629 14:57:34.048" endtime="20200629 14:57:34.054"></status>
+<msg timestamp="20200629 15:13:27.625" level="TRACE">Return: ('PASS', True)</msg>
+<msg timestamp="20200629 15:13:27.625" level="INFO">${st} = ('PASS', True)</msg>
+<status status="PASS" starttime="20200629 15:13:27.621" endtime="20200629 15:13:27.625"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -1164,9 +1164,9 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>fail</arg>
 <arg>Expression ${expression} failed</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.055" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
-<msg timestamp="20200629 14:57:34.055" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:34.054" endtime="20200629 14:57:34.055"></status>
+<msg timestamp="20200629 15:13:27.626" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
+<msg timestamp="20200629 15:13:27.626" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.625" endtime="20200629 15:13:27.626"></status>
 </kw>
 <kw name="Set Test Message" library="BuiltIn">
 <doc>Sets message for the current test case.</doc>
@@ -1174,8 +1174,8 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>Expression ${expression} completed with: ${st}[1] (Expected: ${expected} vs. Real: ${st}[0])\n</arg>
 <arg>append=${TRUE}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.059" level="TRACE">Arguments: [ 'Expression 59m&lt;1h completed with: True (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
-<msg timestamp="20200629 14:57:34.059" level="INFO">Set test message to:
+<msg timestamp="20200629 15:13:27.628" level="TRACE">Arguments: [ 'Expression 59m&lt;1h completed with: True (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
+<msg timestamp="20200629 15:13:27.628" level="INFO">Set test message to:
 Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h&gt;=60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h&lt;=60m completed with: True (Expected: PASS vs. Real: PASS)
@@ -1186,18 +1186,18 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h&gt;59m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 59m&lt;1h completed with: True (Expected: PASS vs. Real: PASS)
 </msg>
-<msg timestamp="20200629 14:57:34.059" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:34.056" endtime="20200629 14:57:34.060"></status>
+<msg timestamp="20200629 15:13:27.628" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.627" endtime="20200629 15:13:27.628"></status>
 </kw>
-<msg timestamp="20200629 14:57:34.060" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:34.046" endtime="20200629 14:57:34.060"></status>
+<msg timestamp="20200629 15:13:27.629" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.619" endtime="20200629 15:13:27.629"></status>
 </kw>
 <kw name="executor">
 <arguments>
 <arg>TIME_OPERATION</arg>
 <arg>1h+20m</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.065" level="TRACE">Arguments: [ ${keyword}='TIME_OPERATION' | ${expression}='1h+20m' | ${expected}='PASS' | ${deviation}='' | ${reason}='' ]</msg>
+<msg timestamp="20200629 15:13:27.632" level="TRACE">Arguments: [ ${keyword}='TIME_OPERATION' | ${expression}='1h+20m' | ${expected}='PASS' | ${deviation}='' | ${reason}='' ]</msg>
 <kw name="Run Keyword And Ignore Error" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
 <arguments>
@@ -1209,7 +1209,7 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <assign>
 <var>${st}</var>
 </assign>
-<msg timestamp="20200629 14:57:34.067" level="TRACE">Arguments: [ 'TIME_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
+<msg timestamp="20200629 15:13:27.635" level="TRACE">Arguments: [ 'TIME_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
 <kw name="TIME_OPERATION" library="robot_math.ROBOT_MATH">
 <doc>    RF_MATH_OPERATION</doc>
 <arguments>
@@ -1217,16 +1217,16 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>deviation_str=${deviation}</arg>
 <arg>reason=${reason}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.069" level="TRACE">Arguments: [ '1h+20m' | deviation_str='' | reason='' ]</msg>
-<msg timestamp="20200629 14:57:34.070" level="TRACE">1h+20m</msg>
-<msg timestamp="20200629 14:57:34.071" level="TRACE">1h add 20m)</msg>
-<msg timestamp="20200629 14:57:34.071" level="DEBUG">Result: 1h 20m</msg>
-<msg timestamp="20200629 14:57:34.071" level="TRACE">Return: 1h 20m</msg>
-<status status="PASS" starttime="20200629 14:57:34.068" endtime="20200629 14:57:34.071"></status>
+<msg timestamp="20200629 15:13:27.637" level="TRACE">Arguments: [ '1h+20m' | deviation_str='' | reason='' ]</msg>
+<msg timestamp="20200629 15:13:27.637" level="TRACE">1h+20m</msg>
+<msg timestamp="20200629 15:13:27.638" level="TRACE">1h add 20m)</msg>
+<msg timestamp="20200629 15:13:27.638" level="DEBUG">Result: 1h 20m</msg>
+<msg timestamp="20200629 15:13:27.638" level="TRACE">Return: 1h 20m</msg>
+<status status="PASS" starttime="20200629 15:13:27.635" endtime="20200629 15:13:27.638"></status>
 </kw>
-<msg timestamp="20200629 14:57:34.072" level="TRACE">Return: ('PASS', 1h 20m)</msg>
-<msg timestamp="20200629 14:57:34.072" level="INFO">${st} = ('PASS', 1h 20m)</msg>
-<status status="PASS" starttime="20200629 14:57:34.066" endtime="20200629 14:57:34.072"></status>
+<msg timestamp="20200629 15:13:27.638" level="TRACE">Return: ('PASS', 1h 20m)</msg>
+<msg timestamp="20200629 15:13:27.639" level="INFO">${st} = ('PASS', 1h 20m)</msg>
+<status status="PASS" starttime="20200629 15:13:27.634" endtime="20200629 15:13:27.639"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -1235,9 +1235,9 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>fail</arg>
 <arg>Expression ${expression} failed</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.074" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
-<msg timestamp="20200629 14:57:34.074" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:34.073" endtime="20200629 14:57:34.075"></status>
+<msg timestamp="20200629 15:13:27.640" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
+<msg timestamp="20200629 15:13:27.640" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.639" endtime="20200629 15:13:27.640"></status>
 </kw>
 <kw name="Set Test Message" library="BuiltIn">
 <doc>Sets message for the current test case.</doc>
@@ -1245,8 +1245,8 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>Expression ${expression} completed with: ${st}[1] (Expected: ${expected} vs. Real: ${st}[0])\n</arg>
 <arg>append=${TRUE}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.077" level="TRACE">Arguments: [ 'Expression 1h+20m completed with: 1h 20m (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
-<msg timestamp="20200629 14:57:34.078" level="INFO">Set test message to:
+<msg timestamp="20200629 15:13:27.642" level="TRACE">Arguments: [ 'Expression 1h+20m completed with: 1h 20m (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
+<msg timestamp="20200629 15:13:27.642" level="INFO">Set test message to:
 Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h&gt;=60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h&lt;=60m completed with: True (Expected: PASS vs. Real: PASS)
@@ -1258,18 +1258,18 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 59m&lt;1h completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h+20m completed with: 1h 20m (Expected: PASS vs. Real: PASS)
 </msg>
-<msg timestamp="20200629 14:57:34.078" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:34.075" endtime="20200629 14:57:34.078"></status>
+<msg timestamp="20200629 15:13:27.642" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.641" endtime="20200629 15:13:27.643"></status>
 </kw>
-<msg timestamp="20200629 14:57:34.079" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:34.062" endtime="20200629 14:57:34.079"></status>
+<msg timestamp="20200629 15:13:27.643" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.630" endtime="20200629 15:13:27.643"></status>
 </kw>
 <kw name="executor">
 <arguments>
 <arg>TIME_OPERATION</arg>
 <arg>12h+50%</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.082" level="TRACE">Arguments: [ ${keyword}='TIME_OPERATION' | ${expression}='12h+50%' | ${expected}='PASS' | ${deviation}='' | ${reason}='' ]</msg>
+<msg timestamp="20200629 15:13:27.645" level="TRACE">Arguments: [ ${keyword}='TIME_OPERATION' | ${expression}='12h+50%' | ${expected}='PASS' | ${deviation}='' | ${reason}='' ]</msg>
 <kw name="Run Keyword And Ignore Error" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
 <arguments>
@@ -1281,7 +1281,7 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <assign>
 <var>${st}</var>
 </assign>
-<msg timestamp="20200629 14:57:34.084" level="TRACE">Arguments: [ 'TIME_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
+<msg timestamp="20200629 15:13:27.648" level="TRACE">Arguments: [ 'TIME_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
 <kw name="TIME_OPERATION" library="robot_math.ROBOT_MATH">
 <doc>    RF_MATH_OPERATION</doc>
 <arguments>
@@ -1289,17 +1289,17 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>deviation_str=${deviation}</arg>
 <arg>reason=${reason}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.086" level="TRACE">Arguments: [ '12h+50%' | deviation_str='' | reason='' ]</msg>
-<msg timestamp="20200629 14:57:34.087" level="TRACE">12h+50%</msg>
-<msg timestamp="20200629 14:57:34.087" level="TRACE">12h add +/-50.00%)</msg>
-<msg timestamp="20200629 14:57:34.087" level="DEBUG">Number 43200 add (+/-50.00%) = 64800.0</msg>
-<msg timestamp="20200629 14:57:34.087" level="DEBUG">Result: 18h</msg>
-<msg timestamp="20200629 14:57:34.087" level="TRACE">Return: 18h</msg>
-<status status="PASS" starttime="20200629 14:57:34.085" endtime="20200629 14:57:34.088"></status>
+<msg timestamp="20200629 15:13:27.650" level="TRACE">Arguments: [ '12h+50%' | deviation_str='' | reason='' ]</msg>
+<msg timestamp="20200629 15:13:27.651" level="TRACE">12h+50%</msg>
+<msg timestamp="20200629 15:13:27.653" level="TRACE">12h add +/-50.00%)</msg>
+<msg timestamp="20200629 15:13:27.654" level="DEBUG">Number 43200 add (+/-50.00%) = 64800.0</msg>
+<msg timestamp="20200629 15:13:27.654" level="DEBUG">Result: 18h</msg>
+<msg timestamp="20200629 15:13:27.655" level="TRACE">Return: 18h</msg>
+<status status="PASS" starttime="20200629 15:13:27.648" endtime="20200629 15:13:27.655"></status>
 </kw>
-<msg timestamp="20200629 14:57:34.088" level="TRACE">Return: ('PASS', 18h)</msg>
-<msg timestamp="20200629 14:57:34.088" level="INFO">${st} = ('PASS', 18h)</msg>
-<status status="PASS" starttime="20200629 14:57:34.084" endtime="20200629 14:57:34.088"></status>
+<msg timestamp="20200629 15:13:27.655" level="TRACE">Return: ('PASS', 18h)</msg>
+<msg timestamp="20200629 15:13:27.656" level="INFO">${st} = ('PASS', 18h)</msg>
+<status status="PASS" starttime="20200629 15:13:27.647" endtime="20200629 15:13:27.656"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -1308,9 +1308,9 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>fail</arg>
 <arg>Expression ${expression} failed</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.089" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
-<msg timestamp="20200629 14:57:34.089" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:34.089" endtime="20200629 14:57:34.090"></status>
+<msg timestamp="20200629 15:13:27.658" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
+<msg timestamp="20200629 15:13:27.658" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.657" endtime="20200629 15:13:27.659"></status>
 </kw>
 <kw name="Set Test Message" library="BuiltIn">
 <doc>Sets message for the current test case.</doc>
@@ -1318,8 +1318,8 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>Expression ${expression} completed with: ${st}[1] (Expected: ${expected} vs. Real: ${st}[0])\n</arg>
 <arg>append=${TRUE}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.091" level="TRACE">Arguments: [ 'Expression 12h+50% completed with: 18h (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
-<msg timestamp="20200629 14:57:34.092" level="INFO">Set test message to:
+<msg timestamp="20200629 15:13:27.661" level="TRACE">Arguments: [ 'Expression 12h+50% completed with: 18h (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
+<msg timestamp="20200629 15:13:27.662" level="INFO">Set test message to:
 Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h&gt;=60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h&lt;=60m completed with: True (Expected: PASS vs. Real: PASS)
@@ -1332,18 +1332,18 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h+20m completed with: 1h 20m (Expected: PASS vs. Real: PASS)
  Expression 12h+50% completed with: 18h (Expected: PASS vs. Real: PASS)
 </msg>
-<msg timestamp="20200629 14:57:34.092" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:34.090" endtime="20200629 14:57:34.092"></status>
+<msg timestamp="20200629 15:13:27.662" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.659" endtime="20200629 15:13:27.662"></status>
 </kw>
-<msg timestamp="20200629 14:57:34.093" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:34.080" endtime="20200629 14:57:34.093"></status>
+<msg timestamp="20200629 15:13:27.664" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.644" endtime="20200629 15:13:27.665"></status>
 </kw>
 <kw name="executor">
 <arguments>
 <arg>TIME_OPERATION</arg>
 <arg>12h - 50%</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.096" level="TRACE">Arguments: [ ${keyword}='TIME_OPERATION' | ${expression}='12h - 50%' | ${expected}='PASS' | ${deviation}='' | ${reason}='' ]</msg>
+<msg timestamp="20200629 15:13:27.667" level="TRACE">Arguments: [ ${keyword}='TIME_OPERATION' | ${expression}='12h - 50%' | ${expected}='PASS' | ${deviation}='' | ${reason}='' ]</msg>
 <kw name="Run Keyword And Ignore Error" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
 <arguments>
@@ -1355,7 +1355,7 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <assign>
 <var>${st}</var>
 </assign>
-<msg timestamp="20200629 14:57:34.098" level="TRACE">Arguments: [ 'TIME_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
+<msg timestamp="20200629 15:13:27.669" level="TRACE">Arguments: [ 'TIME_OPERATION' | '${expression}' | 'deviation_str=${deviation}' | 'reason=${reason}' ]</msg>
 <kw name="TIME_OPERATION" library="robot_math.ROBOT_MATH">
 <doc>    RF_MATH_OPERATION</doc>
 <arguments>
@@ -1363,17 +1363,17 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>deviation_str=${deviation}</arg>
 <arg>reason=${reason}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.099" level="TRACE">Arguments: [ '12h - 50%' | deviation_str='' | reason='' ]</msg>
-<msg timestamp="20200629 14:57:34.099" level="TRACE">12h - 50%</msg>
-<msg timestamp="20200629 14:57:34.100" level="TRACE">12h sub +/-50.00%)</msg>
-<msg timestamp="20200629 14:57:34.100" level="DEBUG">Number 43200 sub (+/-50.00%) = 21600.0</msg>
-<msg timestamp="20200629 14:57:34.101" level="DEBUG">Result: 6h</msg>
-<msg timestamp="20200629 14:57:34.101" level="TRACE">Return: 6h</msg>
-<status status="PASS" starttime="20200629 14:57:34.098" endtime="20200629 14:57:34.101"></status>
+<msg timestamp="20200629 15:13:27.671" level="TRACE">Arguments: [ '12h - 50%' | deviation_str='' | reason='' ]</msg>
+<msg timestamp="20200629 15:13:27.671" level="TRACE">12h - 50%</msg>
+<msg timestamp="20200629 15:13:27.671" level="TRACE">12h sub +/-50.00%)</msg>
+<msg timestamp="20200629 15:13:27.672" level="DEBUG">Number 43200 sub (+/-50.00%) = 21600.0</msg>
+<msg timestamp="20200629 15:13:27.672" level="DEBUG">Result: 6h</msg>
+<msg timestamp="20200629 15:13:27.672" level="TRACE">Return: 6h</msg>
+<status status="PASS" starttime="20200629 15:13:27.669" endtime="20200629 15:13:27.672"></status>
 </kw>
-<msg timestamp="20200629 14:57:34.101" level="TRACE">Return: ('PASS', 6h)</msg>
-<msg timestamp="20200629 14:57:34.102" level="INFO">${st} = ('PASS', 6h)</msg>
-<status status="PASS" starttime="20200629 14:57:34.097" endtime="20200629 14:57:34.102"></status>
+<msg timestamp="20200629 15:13:27.672" level="TRACE">Return: ('PASS', 6h)</msg>
+<msg timestamp="20200629 15:13:27.673" level="INFO">${st} = ('PASS', 6h)</msg>
+<status status="PASS" starttime="20200629 15:13:27.668" endtime="20200629 15:13:27.673"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -1382,9 +1382,9 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>fail</arg>
 <arg>Expression ${expression} failed</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.103" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
-<msg timestamp="20200629 14:57:34.104" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:34.102" endtime="20200629 14:57:34.104"></status>
+<msg timestamp="20200629 15:13:27.673" level="TRACE">Arguments: [ "'PASS' != 'PASS'" | 'fail' | 'Expression ${expression} failed' ]</msg>
+<msg timestamp="20200629 15:13:27.674" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.673" endtime="20200629 15:13:27.674"></status>
 </kw>
 <kw name="Set Test Message" library="BuiltIn">
 <doc>Sets message for the current test case.</doc>
@@ -1392,8 +1392,8 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 <arg>Expression ${expression} completed with: ${st}[1] (Expected: ${expected} vs. Real: ${st}[0])\n</arg>
 <arg>append=${TRUE}</arg>
 </arguments>
-<msg timestamp="20200629 14:57:34.106" level="TRACE">Arguments: [ 'Expression 12h - 50% completed with: 6h (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
-<msg timestamp="20200629 14:57:34.107" level="INFO">Set test message to:
+<msg timestamp="20200629 15:13:27.676" level="TRACE">Arguments: [ 'Expression 12h - 50% completed with: 6h (Expected: PASS vs. Real: PASS)\n' | append=True ]</msg>
+<msg timestamp="20200629 15:13:27.677" level="INFO">Set test message to:
 Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h&gt;=60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h&lt;=60m completed with: True (Expected: PASS vs. Real: PASS)
@@ -1407,16 +1407,16 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 12h+50% completed with: 18h (Expected: PASS vs. Real: PASS)
  Expression 12h - 50% completed with: 6h (Expected: PASS vs. Real: PASS)
 </msg>
-<msg timestamp="20200629 14:57:34.107" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:34.105" endtime="20200629 14:57:34.107"></status>
+<msg timestamp="20200629 15:13:27.677" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.674" endtime="20200629 15:13:27.677"></status>
 </kw>
-<msg timestamp="20200629 14:57:34.108" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20200629 14:57:34.094" endtime="20200629 14:57:34.108"></status>
+<msg timestamp="20200629 15:13:27.677" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200629 15:13:27.666" endtime="20200629 15:13:27.677"></status>
 </kw>
 <tags>
 <tag>Time</tag>
 </tags>
-<status status="PASS" starttime="20200629 14:57:33.923" endtime="20200629 14:57:34.109" critical="yes">Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
+<status status="PASS" starttime="20200629 15:13:27.512" endtime="20200629 15:13:27.678" critical="yes">Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h&gt;=60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h&lt;=60m completed with: True (Expected: PASS vs. Real: PASS)
  Expression 1h==59m completed with: AssertionError (Expected: FAIL vs. Real: FAIL)
@@ -1431,9 +1431,9 @@ Expression 1h==60m completed with: True (Expected: PASS vs. Real: PASS)
 </status>
 </test>
 <doc>ROBOT_MATH self robot tests</doc>
-<status status="PASS" starttime="20200629 14:57:33.733" endtime="20200629 14:57:34.114"></status>
+<status status="PASS" starttime="20200629 15:13:27.305" endtime="20200629 15:13:27.684"></status>
 </suite>
-<status status="PASS" starttime="20200629 14:57:33.665" endtime="20200629 14:57:34.121"></status>
+<status status="PASS" starttime="20200629 15:13:27.231" endtime="20200629 15:13:27.704"></status>
 </suite>
 <statistics>
 <total>

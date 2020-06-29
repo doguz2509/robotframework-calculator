@@ -2,7 +2,7 @@ import logging
 from unittest import TestCase
 
 from robot_math.types import Percent
-from robot_math.types.data_packet_type import DataPacket as PacketSize, DataPacket
+from robot_math.types.data_packet_type import DataPacket
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(module)s: %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
