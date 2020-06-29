@@ -3,11 +3,11 @@
 Extend RF for couple math operations with different data formats
 
 ## Math operation:
-- Compare
-- Add
-- Subscript
-- Multiple
-- Divide
+- Compare (eq, ne, gt, ge, lt, le)
+- Add (+, +=)
+- Subscript (-, -=)
+- Multiple (*, *=)
+- Divide (/, /=)
 
 ## Data formats: ##
 - Robot time strings        - 2h 34m, ...

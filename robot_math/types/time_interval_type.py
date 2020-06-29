@@ -1,7 +1,7 @@
 from enum import IntEnum
 from robot.utils import timestr_to_secs
 
-__doc__ = """RobotTime are extension for RF robot.operators.timestr_to_secs method
+__doc__ = """RobotTime are extension for RF robot_math.cross_type_operators.timestr_to_secs method
 Allow math manipulation with time strings in compatible for RF formats
 
 Examples:
@@ -11,8 +11,8 @@ Examples:
 
 """
 
-from rf_calculator.abstracts import TypeAbstract
-from rf_calculator.libs.percent_type import Percent
+from robot_math.abstracts import TypeAbstract
+from robot_math.types.percent_type import Percent
 
 
 class RobotTimeUnits(IntEnum):
@@ -22,16 +22,16 @@ class RobotTimeUnits(IntEnum):
     d = 24 * 60 * 60
 
 
-class RobotTime(TypeAbstract):
+class TimeInterval(TypeAbstract):
 
     def __init__(cls, value_str):
-        super().__init__(timestr_to_secs(value_str))
+        super().__init__(int(timestr_to_secs(value_str)), type=int, units='seconds')
 
     @staticmethod
-    def from_units(value_str):
-        if type(value_str) == RobotTime:
-            return value_str
-        return RobotTime(value_str)
+    def from_units(value, **kwargs):
+        if type(value) == TimeInterval:
+            return value
+        return TimeInterval(value)
 
     @staticmethod
     def _seconds_to_timestr(seconds, leading_unit=RobotTimeUnits.d):
@@ -54,17 +54,22 @@ class RobotTime(TypeAbstract):
 
     def __add__(self, other):
         if type(other) == Percent:
-            return self.from_units(other + self)
-        return super(RobotTime, self).__add__(other)
+            return self.from_units(other + self.units)
+        return super().__add__(other)
 
     def __iadd__(self, other):
         if type(other) == Percent:
-            _temp = self.from_units(other + self)
-            self._units = _temp.units
+            self._units = other + self.units
             return self
-        return super(RobotTime, self).__iadd__(other)
+        return super().__iadd__(other)
 
     def __sub__(self, other):
         if type(other) == Percent:
-            return self.from_units(other - self)
-        return super(RobotTime, self).__sub__(other)
+            return self.from_units(other - self.units)
+        return super().__sub__(other)
+
+    def __isub__(self, other):
+        if type(other) == Percent:
+            self._units = other - self.units
+            return self
+        return super().__isub__(other)

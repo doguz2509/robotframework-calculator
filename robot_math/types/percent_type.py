@@ -1,7 +1,7 @@
 import logging
 import re
 
-from rf_calculator.abstracts import TypeAbstract
+from robot_math.abstracts import TypeAbstract
 
 _REGEX = re.compile(r'^([\-+])?([\d.]+)(%)?$')
 
@@ -42,7 +42,7 @@ class Percent (TypeAbstract):
         return self - reference <= other_number <= self + reference
 
     def __str__(self):
-        return "{}{0:.0f}".format(
+        return "{}{0:.0f}%".format(
             self._direction if self._direction is not None else r'+/-',
             self.units)
 

@@ -1,13 +1,13 @@
 from setuptools import setup
-from .rf_calculator import __version__ as version
+from .robot_math import __version__ as version
 
 
 setup(
     name='robotframework-calculator',
     version=version,
-    packages=['rf_calculator', 'rf_calculator.libs'],
+    packages=['robot_math', 'robot_math.types'],
     install_requires=[
-        'robotframework>3.1'
+        'robotframework>3.2.1'
     ],
     url='https://github.com/doguz2509/robotframework-calculator',
     license='MIT',
