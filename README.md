@@ -1,26 +1,27 @@
-# Robotframework Calculator
------------------
+#Robotframework Calculator
+
+##Introduction
 Extension for Robotframework converting Time, Percent, DataPacket into numeric like objects
 
 Allow following math operations 
 
-Math operation:
-==============
+##Operating
+###Math operation:
+
 - Compare - eq, ne, gt, ge, lt, le (Equality allow deviation in percent)
 - Add
 - Subscript
 - Multiple 
 - Divide
 
-Data formats: 
-====
+####Data formats: 
+
 - TimeInterval        - 2h 34m, ...
 - Percent                  - 234 + 20%
 - DataPacket (support iperf)  - 1G, 2g, 45m
 - Numeric (integer, float) 
 
-Keywords:
-=====
+####Keywords:
 
 Math:
 
@@ -34,8 +35,8 @@ Conversion:
     GET_PACKET - Convert packet string (1M) into numeric object
     GET_TIME_INTERVAL - Convert time string (1h) into numeric object
 
-API:
-====
+###API:
+
 - Data Packet
 
 
@@ -70,7 +71,7 @@ API:
     
 - Percent
 
-    
+
     from robot_math import Percent
     
     p = Percent('10.5%')
@@ -80,3 +81,9 @@ API:
     > 10.5%
     print(f"{p:.3f}")
     > 0.105
+    
+#Installation
+    
+PIP
+    
+    python -m pip install  robotframework-calculator
