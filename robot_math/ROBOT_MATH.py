@@ -12,7 +12,7 @@ from robot_math.types import Percent, Packet, TimeInterval, format_factory
 __version__ = version
 
 __doc__ = """Providing KW allowing operation with percent, packet, robot_math time as regular numbers
-
+    
 """
 
 __all__ = [
@@ -27,7 +27,7 @@ __all__ = [
 @keyword("LIST_SUM")
 def list_sum(*argv, **kwargs):
     """
-    LIST_SUM - summarise items in provided list
+    Summarise items in provided list
 
     Arguments:
     - argv: list of item for summarise
@@ -104,7 +104,7 @@ def _type_evaluation(**kwargs):
     operation = kwargs.get('operation', None)
     deviation = kwargs.get('deviation', None)
     special_eq = kwargs.get('special_eq')
-    logger.trace(f"{operand1}{operation}{operand2}{f' (Deviation: {deviation}' if deviation else ''})")
+    logger.trace(f"{operand1} {operation.__name__} {operand2}{f' (Deviation: {deviation}' if deviation else ''})")
     if deviation:
         assert not all(type(operand) == Percent for operand in [operand2, deviation]), \
             f"Operation between Packet and Percent doesn't allow deviation"
@@ -119,7 +119,7 @@ def _type_evaluation(**kwargs):
 @keyword("PACKET_OPERATION")
 def packet_operation(expression_str, deviation_str=None, reason=None):
     """
-    RF_MATH_OPERATION
+    Provide logical and mathematical operation with packet
 
     - expression_str: operand1 operation operand2
 
@@ -133,10 +133,11 @@ def packet_operation(expression_str, deviation_str=None, reason=None):
 
     Equality Examples:
 
-    | Operand1  | Operation | Operand2  | Percent   | Result    | Comments  |
-    | 10M       | == | 12M       | 25%       | TRUE      | (10M - 25%) < 12M < (10M + 25%)   |
-    | 10M       | == | 12M       | -25%       | FALSE      | (10M - 25%) < 12M < 10M   |
-    | 10M       | == | 12M       | +25%       | TRUE      | 10M < 12M < (10M + 25%)   |
+    | Operand1  Operation  Operand2 | Deviation   | Result    | Comments  |
+    | 10M  == 12M                   | 25%       | TRUE      | (10M - 25%) < 12M < (10M + 25%)   |
+    | 10M  == 12M                   | 0.25       | TRUE      | (10M - 25%) < 12M < (10M + 25%)   |
+    | 10M  == 12M                   | -25%       | FALSE      | (10M - 25%) < 12M < 10M   |
+    | 10M  == 12M                   | +25%      | TRUE      | 10M < 12M < (10M + 25%)   |
 
     - reason: Custom fail reason
 

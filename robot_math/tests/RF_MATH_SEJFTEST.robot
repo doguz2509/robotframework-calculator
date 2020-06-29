@@ -26,6 +26,7 @@ Time test
     TIME_OPERATION   1h<=60m
     TIME_OPERATION   1h==59m  expected=FAIL
     TIME_OPERATION   1h==54m  deviation=10%
+    TIME_OPERATION   1h==54m  deviation=0.1
     TIME_OPERATION   1h==53m  deviation=10%  reason=My reason  expected=FAIL
     TIME_OPERATION   1h>59m
     TIME_OPERATION   59m<1h

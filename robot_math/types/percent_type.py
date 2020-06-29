@@ -7,6 +7,9 @@ _REGEX = re.compile(r'^([\-+])?([\d.]+)(%)?$')
 
 
 class Percent (TypeAbstract):
+
+    DEFAULT_FORMAT = '.2%'
+
     __doc__ = """Percent class allow define percentage comparing of numbers
        Allowed define as:
         - percentage string (5%, 5.5%, +5%, -5%, 0.3%)
@@ -19,11 +22,15 @@ class Percent (TypeAbstract):
     #     super(Percent , mcs).__new__(*args, **kwargs)
 
     def __init__(cls, value, format_round=2):
-        _float_units, cls._direction = cls._parse(value)
+        cls._round = format_round
+        _float_units, cls._direction = cls._parse(value, format_round)
         super(Percent, cls).__init__(_float_units)
 
+    def __float__(self):
+        return round(self.units, self._round)
+
     @staticmethod
-    def _parse(value):
+    def _parse(value, _round=0):
         try:
             m = _REGEX.match(str(value))
             assert m is not None, f"Expression not match pattern - '{value}'"
@@ -32,7 +39,7 @@ class Percent (TypeAbstract):
             if _float < 1 and m.groups()[2] is None:
                 _float *= 100
             assert 0 <= _float <= 100, f"Percent must de decimal number in range between 0-100 only ({_float})"
-            return _float, _direction
+            return round(_float, _round), _direction
         except AssertionError:
             raise ValueError(f"Percent must de decimal number in range between 0-100 only")
         except (ValueError, TypeError):
@@ -42,15 +49,16 @@ class Percent (TypeAbstract):
         return self - reference <= other_number <= self + reference
 
     def __str__(self):
-        return "{}{0:.0f}%".format(
-            self._direction if self._direction is not None else r'+/-',
-            self.units)
+        return format(self, '')
+        # return "{}{}%".format(self._direction if self._direction is not None else '+/-', self.units)
 
     def __format__(self, format_spec):
-        format_expression = f'{{}}{{:{format_spec}}}'
-        return format_expression.format(
-            self._direction if self._direction is not None else r'+/-',
-            float(self) / 100 if format_spec.endswith('%') else float(self))
+        present_number = round(float(self.units / 100), self._round)
+        if format_spec == '':
+            res_format = f"{self._direction if self._direction is not None else r'+/-'}{{:{self.DEFAULT_FORMAT}}}"
+        else:
+            res_format = f"{{:{format_spec}}}"
+        return res_format.format(present_number)
 
     @staticmethod
     def from_units(value):
@@ -62,7 +70,7 @@ class Percent (TypeAbstract):
         else:
             result = other
         logging.debug(f"Number {other} add ({self}) = {result}")
-        return result
+        return round(result, self._round)
 
     def __sub__(self, other):
         if self._direction is None or self._direction == '-':
@@ -70,5 +78,5 @@ class Percent (TypeAbstract):
         else:
             result = other
         logging.debug(f"Number {other} sub ({self}) = {result}")
-        return result
+        return round(result, self._round)
 

@@ -28,8 +28,15 @@ class TestPercent(TestCase):
 
     def test_02(self):
         p1 = Percent(10.5)
+        logging.info(f"{repr(p1)}")
+        logging.info(f"{p1}")
+        logging.info(f"{p1:.1%}")
+        logging.info(f"{p1:.0%}")
+        logging.info(f"{p1:.4f}")
+        logging.info(f"{p1:.2f}")
         n1 = 10006
         logging.info(f"{n1}")
+
         expected = n1 * (100 + 10.5)/100
         assert p1 + n1 == expected, f"Expected ({expected}) vs {p1-n1}"
         logging.info(f"{p1 + n1} - {expected}")

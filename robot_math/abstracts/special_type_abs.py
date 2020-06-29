@@ -11,9 +11,9 @@ class _SpecialType(ABC, type):
         cls.__repr__ = cls.__str__
         try:
             cls._unit_type = kwargs.get('type', float)
-            assert isinstance(units_count, cls._unit_type)
-            _unit_name = kwargs.get('units', 'units')
             cls._units = cls._unit_type(units_count)
+            assert isinstance(cls._units, cls._unit_type)
+            _unit_name = kwargs.get('units', 'units')
             if _unit_name != 'units':
                 setattr(cls, _unit_name, cls.units)
 
@@ -39,7 +39,8 @@ class _SpecialType(ABC, type):
     def __str__(self):
         raise NotImplementedError()
 
-    __repr__ = __str__
+    def __repr__(self):
+        return str(self)
 
     @staticmethod
     @abstractmethod
