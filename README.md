@@ -14,9 +14,25 @@ Math operation:
 
 Data formats: 
 ====
-- Robot time strings        - 2h 34m, ...
-- Percents                  - 234 + 20%
-- Bitrate (support iperf)  - 1G, 2g, 45m
+- TimeInterval        - 2h 34m, ...
+- Percent                  - 234 + 20%
+- DataPacket (support iperf)  - 1G, 2g, 45m
+- Numeric (integer, float) 
+
+Keywords:
+=====
+
+Math:
+
+    LIST_SUM          - Allow sumarise provided list of numbers
+    NUMERIC_OPERATION - Allow regular ariphmetic, logical, percent operation on numbers (in, float)
+    PACKET_OPERATION  - Allow regular ariphmetic, logical, percent operation on DataPacket 
+    TIME_OPERATION    - Allow regular ariphmetic, logical, percent operation on TimeIntervals
+    
+Conversion:
+
+    GET_PACKET - Convert packet string (1M) into numeric object
+    GET_TIME_INTERVAL - Convert time string (1h) into numeric object
 
 API:
 ====
@@ -40,6 +56,7 @@ API:
 
 
     from robot_math import TimeInterval
+    
     t1 = TimeInterval('1h')
     print(f"{t1}")
     > 1h
@@ -50,6 +67,7 @@ API:
     print(f"{t1}")
     > 1h 40m
 
+    
 - Percent
 
     

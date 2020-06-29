@@ -6,8 +6,8 @@ from robot.api.deco import keyword
 from robot.errors import FrameworkError
 
 from robot_math import __version__ as version
-from robot_math.types.cross_type_operators import packet_eq, robot_time_eq
-from robot_math.types import Percent, DataPacket, TimeInterval, format_factory
+from robot_math.types.cross_type_operators import packet_eq, robot_time_eq, float_eq
+from robot_math.types import Percent, DataPacket, TimeInterval, format_factory, type_factory
 
 __version__ = version
 
@@ -19,6 +19,7 @@ __all__ = [
     'list_sum',
     'packet_operation',
     'time_operation',
+    'numeric_operation',
     'get_packet',
     'get_time_interval'
 ]
@@ -86,15 +87,15 @@ def _robot_time_operation(operation):
         raise ValueError(f"Operator '{operation}' not valid")
 
 
-def _parse_line(expression, main_type, *extra_types):
+def _parse_line(expression, *extra_types):
     regex_exp = r'(\d\w+)\s*([\+\-\*\/\=<>]{,2})\s*(.+)'
     regex = re.compile(regex_exp)
     m = regex.match(expression)
     assert m is not None, f"Expression {expression} not math"
     assert len(m.groups()) == 3, f"Wrong expression {expression}"
-    operand1 = format_factory(m.groups()[0], main_type)
+    operand1 = format_factory(m.groups()[0], *extra_types)
     operation = _robot_time_operation(m.groups()[1])
-    operand2 = format_factory(m.groups()[2], main_type, *extra_types)
+    operand2 = format_factory(m.groups()[2], *extra_types)
     return operand1, operation, operand2
 
 
@@ -111,7 +112,10 @@ def _type_evaluation(**kwargs):
     if deviation and operation == operator.eq:
         result = special_eq(operand1, operand2, deviation)
     else:
-        result = operation(operand1, operand2)
+        if isinstance(operand1, (float, int)):
+            result = operation(operand2, operand1)
+        else:
+            result = operation(operand1, operand2)
     logger.debug(f"Result: {result}")
     return result
 
@@ -144,8 +148,6 @@ def packet_operation(expression_str, deviation_str=None, reason=None):
     return: TRUE/FALSE for logical operation and value for math operation
     """
     try:
-        # deviation_str = options.get('deviation', None)
-        # reason = options.get('reason', None)
 
         logger.trace(f"{expression_str}{', ' + deviation_str  if deviation_str else ''}")
         _deviation = format_factory(deviation_str, Percent) if deviation_str else None
@@ -186,9 +188,51 @@ def time_operation(expression_str, deviation_str=None, reason=None):
     try:
         logger.trace(f"{expression_str}{', ' + deviation_str if deviation_str else ''}")
         _deviation = format_factory(deviation_str, Percent) if deviation_str else None
-        operand1, operation, operand2 = _parse_line(expression_str, TimeInterval, Percent)
+        operand1, operation, operand2 = _parse_line(expression_str, float, TimeInterval, Percent)
         result = _type_evaluation(operand1=operand1, operand2=operand2,
                                   operation=operation, deviation=_deviation, special_eq=robot_time_eq)
+        assert result is not False, f"{operand1} {operation.__name__} {operand2} False" if reason is None else reason
+        return result
+    except AssertionError as e:
+        raise e
+    except Exception as e:
+        raise FrameworkError(e)
+
+
+@keyword("NUMERIC_OPERATION")
+def numeric_operation(expression_str, deviation_str=None, reason=None):
+    """
+        Provide logical and mathematical operation with packet
+
+        - expression_str: operand1 operation operand2
+
+        | Example | Comments |
+        | 1M * 2 | Multiple Packet size 2M |
+        | 1M + 10K | Return packet size 1.01M |
+        | 1M + 10% | Return packet size 1.1M |
+
+        Options:
+        - deviation: add on for comparison verifications (eq, ,gt, lt, ge, le)
+
+        Equality Examples:
+
+        | Operand1  Operation  Operand2 | Deviation   | Result    | Comments  |
+        | 10M  == 12M                   | 25%       | TRUE      | (10M - 25%) < 12M < (10M + 25%)   |
+        | 10M  == 12M                   | 0.25       | TRUE      | (10M - 25%) < 12M < (10M + 25%)   |
+        | 10M  == 12M                   | -25%       | FALSE      | (10M - 25%) < 12M < 10M   |
+        | 10M  == 12M                   | +25%      | TRUE      | 10M < 12M < (10M + 25%)   |
+
+        - reason: Custom fail reason
+
+        return: TRUE/FALSE for logical operation and value for math operation
+        """
+    try:
+
+        logger.trace(f"{expression_str}{', ' + deviation_str if deviation_str else ''}")
+        _deviation = format_factory(deviation_str, Percent) if deviation_str else None
+        operand1, operation, operand2 = _parse_line(expression_str, float, Percent)
+        result = _type_evaluation(operand1=operand1, operand2=operand2,
+                                  operation=operation, deviation=_deviation, special_eq=float_eq)
         assert result is not False, f"{operand1} {operation.__name__} {operand2} False" if reason is None else reason
         return result
     except AssertionError as e:

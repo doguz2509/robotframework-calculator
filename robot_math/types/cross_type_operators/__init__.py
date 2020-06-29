@@ -46,3 +46,7 @@ def packet_eq(packet1, packet2, percent):
 
 def robot_time_eq(time1, time2, percent):
     return time1 - percent <= time2 <= time1 + percent
+
+
+def float_eq(num1, num2, percent):
+    return percent - num1 <= num2 <= percent + num1

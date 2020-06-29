@@ -22,6 +22,9 @@ Time test
     [Tags]  Time
     [Template]  executor
     TIME_OPERATION   1h==60m
+    TIME_OPERATION   1h*2
+    TIME_OPERATION   1h*10s     expected=FAIL  reason=Cannot multiple time to time
+    TIME_OPERATION   1h*10s   expected=FAIL
     TIME_OPERATION   1h>=60m
     TIME_OPERATION   1h<=60m
     TIME_OPERATION   1h==59m  expected=FAIL
@@ -34,9 +37,25 @@ Time test
     TIME_OPERATION   12h+50%
     TIME_OPERATION   12h - 50%
 
+Numeric test
+    [Tags]  Nmeric
+    [Template]  executor
+#    NUMERIC_OPERATION  100 == 100
+#    NUMERIC_OPERATION  100 < 100  expected=FAIL
+#    NUMERIC_OPERATION  100 < 100  expected=FAIL  reason=Not LT
+#    NUMERIC_OPERATION  100 > 100  expected=FAIL  reason=Not LT
+#    NUMERIC_OPERATION  100 >= 100
+#    NUMERIC_OPERATION  100 <= 100
+#    NUMERIC_OPERATION  100 + 25
+    NUMERIC_OPERATION  100 + 25%
+    NUMERIC_OPERATION  100 - 25%
+    NUMERIC_OPERATION  100 == 75  deviation=25%
+    NUMERIC_OPERATION  100 + 25.5
+    NUMERIC_OPERATION  100 - 25.5
+
 *** Keywords ***
 executor
     [Arguments]  ${keyword}  ${expression}  ${expected}=PASS  ${deviation}=${EMPTY}  ${reason}=${EMPTY}
     ${st}=  run keyword and ignore error  ${keyword}  ${expression}  deviation_str=${deviation}  reason=${reason}
     run keyword if  '${st}[0]' != '${expected}'  fail  Expression ${expression} failed
-    set test message  Expression ${expression} completed with: ${st}[1] (Expected: ${expected} vs. Real: ${st}[0])\n  append=${TRUE}
+    set test message  Expression ${expression} completed with: ${st}[1] [${deviation}] (Expected: ${expected} vs. Real: ${st}[0])\n  append=${TRUE}

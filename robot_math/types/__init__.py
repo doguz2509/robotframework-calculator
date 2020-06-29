@@ -7,6 +7,19 @@ from robot_math.types.time_interval_type import TimeInterval, RobotTimeUnits
 from robot_math.types.data_packet_type import DataPacket, PacketUnit
 
 ERROR_INFO = namedtuple('ERROR_INFO', ['File', 'Line'])
+SUPPORTED_TYPES = [int.__name__, float.__name__, DataPacket.__name__, TimeInterval.__name__]
+
+
+def type_factory(object_name=int):
+    if object_name == DataPacket.__name__:
+        return DataPacket
+    if object_name == TimeInterval.__name__:
+        return TimeInterval
+    if object_name == 'int':
+        return int
+    if object_name == 'float':
+        return float
+    raise TypeError(f"Object name not valid ({object_name}); Supported types: {', '.join(SUPPORTED_TYPES)}")
 
 
 def format_factory(string: str, main_type, *extra_types):
