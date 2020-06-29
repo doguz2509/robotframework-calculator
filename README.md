@@ -1,11 +1,13 @@
 # Robotframework Calculator
-##Introduction
+
+## Introduction
+
 Extension for Robotframework converting Time, Percent, DataPacket into numeric like objects
 
 Allow following math operations 
 
-##Operating
-###Math operation:
+## Operating
+### Math operation:
 
 - Compare - eq, ne, gt, ge, lt, le (Equality allow deviation in percent)
 - Add
@@ -13,14 +15,14 @@ Allow following math operations
 - Multiple 
 - Divide
 
-####Data formats: 
+#### Data formats: 
 
 - TimeInterval        - 2h 34m, ...
 - Percent                  - 234 + 20%
 - DataPacket (support iperf)  - 1G, 2g, 45m
 - Numeric (integer, float) 
 
-####Keywords:
+#### Keywords:
 
 **Math**
 
@@ -34,7 +36,7 @@ Allow following math operations
     GET_PACKET - Convert packet string (1M) into numeric object
     GET_TIME_INTERVAL - Convert time string (1h) into numeric object
 
-###API:
+### API:
 
 **Data Packet**
 
