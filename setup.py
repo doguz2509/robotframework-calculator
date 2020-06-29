@@ -17,7 +17,7 @@ setup(
     author=__author__,
     author_email=__author_email__,
     description='Extension for Robotframework converting data packet, time str and percent into numeric objects',
-    long_description_content_type="text/markdown",
+    long_description_content_type="text/reST",
     long_description=long_description,
     classifiers=[
         'License :: OSI Approved :: MIT License',
