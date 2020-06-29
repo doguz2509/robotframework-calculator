@@ -1,7 +1,7 @@
 import logging
 import re
 
-from robot_math.abstracts import TypeAbstract
+from .abstracts import TypeAbstract
 
 _REGEX = re.compile(r'^([\-+])?([\d.]+)(%)?$')
 

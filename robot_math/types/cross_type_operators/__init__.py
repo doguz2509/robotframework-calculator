@@ -1,24 +1,24 @@
 from robot_math.types import Percent, TimeInterval
-from robot_math.types.packet_type import Packet
+from robot_math.types.data_packet_type import DataPacket
 
 
 def packet_sum(*packet_list, **kwargs):
     _list = list(packet_list)
     if _list.__len__() == 0:
-        return Packet(number=0, **kwargs)
-    _res = Packet(_list.pop())
+        return DataPacket(number=0, **kwargs)
+    _res = DataPacket(_list.pop())
     while _list.__len__() > 0:
         _next = _list.pop()
         _next.format = _res.rate
-        _res += Packet(_next, **kwargs)
+        _res += DataPacket(_next, **kwargs)
     return _res
 
 
 def packet_min(*packet_list, **kwargs):
     _list = list(packet_list)
     if _list.__len__() == 0:
-        return Packet(number=0, **kwargs)
-    _res = Packet(_list.pop(), **kwargs)
+        return DataPacket(number=0, **kwargs)
+    _res = DataPacket(_list.pop(), **kwargs)
     while _list.__len__() > 0:
         _next = _list.pop()
         _next.format = _res.rate
@@ -30,8 +30,8 @@ def packet_min(*packet_list, **kwargs):
 def packet_max(*packet_list, **kwargs):
     _list = list(packet_list)
     if _list.__len__() == 0:
-        return Packet(number=0, **kwargs)
-    _res = Packet(_list.pop(), **kwargs)
+        return DataPacket(number=0, **kwargs)
+    _res = DataPacket(_list.pop(), **kwargs)
     while _list.__len__() > 0:
         _next = _list.pop()
         _next.format = _res.format

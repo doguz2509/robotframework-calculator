@@ -2,8 +2,8 @@
 import enum
 import re
 
-from robot_math.abstracts import TypeAbstract
-from robot_math.types import Percent
+from .abstracts import TypeAbstract
+from . import Percent
 
 BIT = 1
 BYTE = 8
@@ -24,7 +24,7 @@ class PacketUnit(enum.IntEnum):
 BITRATE_REGEX = re.compile(r'([\d.]+)(.*)')
 
 
-class Packet(TypeAbstract):
+class DataPacket(TypeAbstract):
     def __init__(cls, value_str=None, **kwargs):
         try:
             value_str = '0' if value_str == 0 else value_str
@@ -74,8 +74,8 @@ class Packet(TypeAbstract):
     @staticmethod
     def from_units(value, rate=PacketUnit.b):
         if isinstance(value, str):
-            return Packet(value, rate=rate)
-        return Packet(number=value / rate, rate=rate)
+            return DataPacket(value, rate=rate)
+        return DataPacket(number=value / rate, rate=rate)
 
     def __format__(self, format_spec):
         rates = [r for r in list(PacketUnit) if format_spec.endswith(r.name)]

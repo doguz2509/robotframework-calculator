@@ -11,8 +11,8 @@ Examples:
 
 """
 
-from robot_math.abstracts import TypeAbstract
-from robot_math.types.percent_type import Percent
+from .abstracts import TypeAbstract
+from . import Percent
 
 
 class RobotTimeUnits(IntEnum):

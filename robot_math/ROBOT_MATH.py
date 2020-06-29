@@ -6,8 +6,8 @@ from robot.api.deco import keyword
 from robot.errors import FrameworkError
 
 from robot_math import __version__ as version
-from robot_math.cross_type_operators import packet_eq, robot_time_eq
-from robot_math.types import Percent, Packet, TimeInterval, format_factory
+from robot_math.types.cross_type_operators import packet_eq, robot_time_eq
+from robot_math.types import Percent, DataPacket, TimeInterval, format_factory
 
 __version__ = version
 
@@ -149,7 +149,7 @@ def packet_operation(expression_str, deviation_str=None, reason=None):
 
         logger.trace(f"{expression_str}{', ' + deviation_str  if deviation_str else ''}")
         _deviation = format_factory(deviation_str, Percent) if deviation_str else None
-        operand1, operation, operand2 = _parse_line(expression_str, Packet, Percent)
+        operand1, operation, operand2 = _parse_line(expression_str, DataPacket, Percent)
         result = _type_evaluation(operand1=operand1, operand2=operand2,
                                   operation=operation, deviation=_deviation, special_eq=packet_eq)
         assert result is not False, f"{operand1} {operation.__name__} {operand2} False" if reason is None else reason
@@ -205,7 +205,7 @@ def get_packet(packet_str):
     - time_str: Packet string in iperf format (1M, 1m, 2K, 5T, 1000b, 12B, etc)
     - return: Packet object
     """
-    return Packet(packet_str)
+    return DataPacket(packet_str)
 
 
 @keyword("GET_TIME_INTERVAL")

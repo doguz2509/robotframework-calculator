@@ -3,8 +3,8 @@ import sys
 from collections import namedtuple
 
 from robot_math.types.percent_type import Percent
-from robot_math.types.time_interval_type import TimeInterval
-from robot_math.types.packet_type import Packet, PacketUnit
+from robot_math.types.time_interval_type import TimeInterval, RobotTimeUnits
+from robot_math.types.data_packet_type import DataPacket, PacketUnit
 
 ERROR_INFO = namedtuple('ERROR_INFO', ['File', 'Line'])
 
@@ -28,7 +28,7 @@ def get_error_info():
 __all__ = [
     Percent.__name__,
     TimeInterval.__name__,
-    Packet.__name__,
+    DataPacket.__name__,
     format_factory.__name__,
     get_error_info.__name__
 ]
