@@ -31,7 +31,7 @@ Allow following math operations
     PACKET_OPERATION  - Allow regular ariphmetic, logical, percent operation on DataPacket 
     TIME_OPERATION    - Allow regular ariphmetic, logical, percent operation on TimeIntervals
     
-[Library] [robot_math/ROBOT_MATH.html] Keyword documentation
+<a href="robot_math/ROBOT_MATH.html">Keyword documentation</a>
 
 **Conversion**
 
