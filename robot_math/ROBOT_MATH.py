@@ -36,10 +36,13 @@ def list_sum(*argv, **kwargs):
     Options:
         - type: list item type (int if omitted)
 
+        Note: All types provided by this lib supported
+
     Returns sum number in 'type' format
 
     """
-    _type = kwargs.get('type', int)
+    _type_name = kwargs.get('type', 'int')
+    _type = type_factory(_type_name)
     _result: _type = 0
     try:
         for _list in argv:
@@ -207,9 +210,9 @@ def numeric_operation(expression_str, deviation_str=None, reason=None):
         - expression_str: operand1 operation operand2
 
         | Example | Comments |
-        | 1M * 2 | Multiple Packet size 2M |
-        | 1M + 10K | Return packet size 1.01M |
-        | 1M + 10% | Return packet size 1.1M |
+        | 1 * 2 | Multiple - 2 |
+        | 1 + 10 | Add 11 |
+        | 100 + 10% | Add percent |
 
         Options:
         - deviation: add on for comparison verifications (eq, ,gt, lt, ge, le)
@@ -217,10 +220,10 @@ def numeric_operation(expression_str, deviation_str=None, reason=None):
         Equality Examples:
 
         | Operand1  Operation  Operand2 | Deviation   | Result    | Comments  |
-        | 10M  == 12M                   | 25%       | TRUE      | (10M - 25%) < 12M < (10M + 25%)   |
-        | 10M  == 12M                   | 0.25       | TRUE      | (10M - 25%) < 12M < (10M + 25%)   |
-        | 10M  == 12M                   | -25%       | FALSE      | (10M - 25%) < 12M < 10M   |
-        | 10M  == 12M                   | +25%      | TRUE      | 10M < 12M < (10M + 25%)   |
+        | 10  == 12                   | 25%       | TRUE      | (10 - 25%) < 12 < (10 + 25%)   |
+        | 10  == 12                   | 0.25       | TRUE      | (10 - 25%) < 12 < (10 + 25%)   |
+        | 10  == 12                   | -25%       | FALSE      | (10 - 25%) < 12 < 10   |
+        | 10  == 12                   | +25%      | TRUE      | 10 < 12 < (10 + 25%)   |
 
         - reason: Custom fail reason
 
@@ -244,7 +247,6 @@ def numeric_operation(expression_str, deviation_str=None, reason=None):
 @keyword("GET_PACKET")
 def get_packet(packet_str):
     """
-    GET_PACKET
     Converting packet string to numeric object
     - time_str: Packet string in iperf format (1M, 1m, 2K, 5T, 1000b, 12B, etc)
     - return: Packet object
@@ -255,7 +257,6 @@ def get_packet(packet_str):
 @keyword("GET_TIME_INTERVAL")
 def get_time_interval(time_str):
     """
-    GET_TIME_INTERVAL
     Converting time string to numeric object
     - time_str: Time string in robot format (3h, 1h 20m 3s, etc)
     - return: TimeInterval object
