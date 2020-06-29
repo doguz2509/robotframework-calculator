@@ -1,8 +1,11 @@
-
+import re
 from abc import ABC, abstractmethod
 
 
 class _SpecialType(ABC, type):
+
+    FORMAT_PARSE_REGEX = re.compile(r'^\.([\d]+)([a-zA-Z%]?)$')
+
     def __new__(mcs, *args, **kwargs):
         return super().__new__(mcs, mcs.__name__, (object,), kwargs)
 
@@ -25,6 +28,17 @@ class _SpecialType(ABC, type):
 
     def __int__(self):
         return int(self.units)
+
+    def _get_round_from_format_spec(cls, format_spec, adjust=False):
+        m = cls.FORMAT_PARSE_REGEX.match(format_spec)
+        if m is None:
+            raise ValueError(f"Wrong format: {format_spec}")
+        _spec_index, _spec_char = int(m.groups()[0]), m.groups()[1]
+
+        if adjust:
+            _in_str = str(cls.units / 100).split('.', 2)[1]
+            _spec_index = len(_in_str)
+        return _spec_index, _spec_char
 
     @property
     def units(self):

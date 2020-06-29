@@ -106,6 +106,9 @@ class DataPacket(TypeAbstract):
         if type(other) == Percent:
             self._units = self.from_units(other + self.units, rate=self.rate)
             return self
+
+        if isinstance(other, str):
+            other = DataPacket(other)
         return super().__iadd__(other)
 
     def __sub__(self, other):

@@ -90,11 +90,11 @@ class TestBitrate(TestCase):
     def test_iadd(self):
         p = DataPacket('1M')
         p_add = DataPacket('1K')
-        logging.info(f"{p:.1m}")
+        logging.info(f"1M - {p:.1m}")
         p += p_add
-        logging.info(f"{p:.4m}")
+        logging.info(f"8m - {p:.4m}")
         p += '1M'
-        logging.info(f"{p:.4m}")
+        logging.info(f"12m - {p:.4m}")
 
     def test_isub(self):
         p = DataPacket('1M')
